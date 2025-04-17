@@ -12,7 +12,7 @@ function RightHand() {
                 <Header />
                 <Card />
                 <Transfer />
-                <footer>&copy; {CurrentYear}</footer>
+                <footer className="text-center my-5">Copyright &copy; {CurrentYear}</footer>
             </div>
 
         </>
