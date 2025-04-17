@@ -1,17 +1,17 @@
-import Header from "./Header.jsx";
-import Card from "./Card.jsx";
-import Transfer from "./Transfer.jsx";
+import Header from "../components/Header.jsx";
+import Card from "../components/Card.jsx";
+import TransferTable from "../components/TransferTable.jsx";
 
 const CurrentYear = new Date().getFullYear();
 //document.getElementById("year").innerHTML = date;
 
-function RightHand() {
+function Home() {
     return (
         <>
             <div className="w-75 d-flex flex-column">
                 <Header />
                 <Card />
-                <Transfer />
+                <TransferTable />
                 <footer className="text-center my-5">Copyright &copy; {CurrentYear}</footer>
             </div>
 
@@ -19,4 +19,4 @@ function RightHand() {
     );
 }
 
-export default RightHand;
+export default Home;

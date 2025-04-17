@@ -1,4 +1,4 @@
-function Transfer() {
+function TransferTable() {
     return (
         <>
             <div>
@@ -33,4 +33,4 @@ function Transfer() {
     );
 }
 
-export default Transfer;
+export default TransferTable;
