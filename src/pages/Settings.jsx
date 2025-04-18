@@ -1,10 +1,17 @@
+import HeaderSettings from "../components/settingsComponent/HeaderSettings.jsx";
+import BodySettings from "../components/settingsComponent/BodySettings.jsx";
+import Footer from "../components/Footer.jsx";
+
 function Settings() {
-    return (
-      <div>
-        <h1>Settings Page</h1>
-        <p>This is the notification page content.</p>
+  return (
+    <>
+      <div className="w-75 d-flex flex-column">
+        <HeaderSettings />
+        <BodySettings />
+        <Footer />
       </div>
-    );
-  }
-  
-  export default Settings;
+    </>
+  );
+}
+
+export default Settings;

@@ -1,9 +1,7 @@
-import Header from "../components/Header.jsx";
-import Card from "../components/Card.jsx";
-import TransferTable from "../components/TransferTable.jsx";
-
-const CurrentYear = new Date().getFullYear();
-//document.getElementById("year").innerHTML = date;
+import Header from "../components/homeComponent/Header.jsx";
+import Card from "../components/homeComponent/Card.jsx";
+import TransferTable from "../components/homeComponent/TransferTable.jsx";
+import Footer from "../components/Footer.jsx";
 
 function Home() {
     return (
@@ -12,7 +10,7 @@ function Home() {
                 <Header />
                 <Card />
                 <TransferTable />
-                <footer className="text-center my-5">Copyright &copy; {CurrentYear}</footer>
+                <Footer />
             </div>
 
         </>
