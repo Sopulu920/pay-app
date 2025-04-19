@@ -5,12 +5,12 @@ import mobile from "../assets/images/9mobile.jpg";
 import Footer from "../components/Footer.jsx";
 import { Link } from "react-router-dom";
 
-function Airtime() {
+function Data() {
   return (
     <>
       <div className="d-flex flex-column">
         <Link to="/airtimeData" className="p-3 m-3 fs-5 border rounded page">
-          <h1><i className="fa-solid fa-arrow-left"></i> Airtime</h1>
+          <h1><i className="fa-solid fa-arrow-left"></i> Data</h1>
         </Link>
         <div className="d-flex w-100 justify-content-around sim">
           <button className="w-25 border rounded d-flex justify-content-around">
@@ -36,4 +36,4 @@ function Airtime() {
   );
 }
 
-export default Airtime;
+export default Data;
