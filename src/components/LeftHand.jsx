@@ -9,8 +9,7 @@ function LeftHand() {
             <Link className="py-4 page" to="/notification"><i className="fa-solid fa-bell"></i></Link>
             <Link className="py-4 page" to="/transfer"><i className="fa-solid fa-right-left"></i></Link>
             <Link className="py-4 page" to="/airtimeData"><i className="fa-solid fa-mobile"></i></Link>
-            <Link className="py-4 page" to="/settings"><i className="fa-solid fa-gear"></i></Link>
-            
+            <Link className="py-4 page" to="/settings"><i className="fa-solid fa-gear"></i></Link>            
         </div>
     );
 }
