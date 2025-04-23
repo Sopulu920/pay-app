@@ -1,13 +1,13 @@
 import LeftHand from "../components/LeftHand.jsx";
+import HeaderTransfer from "../components/transferComponent/HeaderTransfer.jsx";
 
 function Transfer() {
   return (
     <>
       <div className="d-flex justify-content-between">
         <LeftHand />
-        <div>
-          <h1>Transfer Page</h1>
-          <p>This is the notification page content.</p>
+        <div className="w-75 d-flex flex-column">
+          <HeaderTransfer />
         </div>
       </div>
     </>

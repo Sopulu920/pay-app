@@ -14,6 +14,11 @@
    color: black;
  }
 
- .sim{
-  max-height: 50px;
+ .sim {
+   max-height: 50px;
+ }
+
+ .note {
+   text-decoration: underline blue;
+   color: blue;
  }

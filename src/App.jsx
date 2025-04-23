@@ -7,6 +7,9 @@ import Airtime from "./pages/Airtime.jsx";
 import Data from "./pages/Data.jsx";
 import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
+import AllTransaction from "./pages/AllTransactions.jsx";
+import Receive from "./pages/Receive.jsx";
+import Send from "./pages/Send.jsx";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -23,6 +26,9 @@ function App() {
           <Route path="/settings" element={<Settings />} />
           <Route path="/airtime" element={<Airtime />} />
           <Route path="/data" element={<Data />} />
+          <Route path="/allTransaction" element={<AllTransaction />} />
+          <Route path="/send" element={<Send />} />
+          <Route path="/receive" element={<Receive />} />
         </Routes>
       </Router>
     </>
