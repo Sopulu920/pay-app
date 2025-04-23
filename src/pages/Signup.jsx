@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Signup() {
     return (
         <>
@@ -19,6 +21,9 @@ function Signup() {
                     <br />
                     <button className="btn btn-primary border rounded">Sign Up</button>
                     <br />
+                    <div className="text-center">
+                        <p>Already have an account? <Link to="/login">Log in</Link></p>
+                    </div>
                 </form>
             </div>
 
