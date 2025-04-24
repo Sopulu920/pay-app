@@ -9,10 +9,10 @@ function AllTransaction() {
         <LeftHand />
         <div className="body">
           <HeaderNotification />
-          <div className="d-flex justify-content-around">
-            <Link to="/allTransaction" className="page note fs-4">All Transactions</Link>
-            <Link to="/receive" className="page fs-4">Receive</Link>
-            <Link to="/send" className="page fs-4">Send</Link>
+          <div className="notes">
+            <Link to="/allTransaction" className="page note">All Transactions</Link>
+            <Link to="/receive" className="page">Receive</Link>
+            <Link to="/send" className="page">Send</Link>
           </div>
         </div>
       </div>

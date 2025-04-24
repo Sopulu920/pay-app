@@ -9,10 +9,10 @@ function Send() {
         <LeftHand />
         <div className="body">
           <HeaderNotification />
-          <div className="d-flex justify-content-around">
-            <Link to="/allTransaction" className="page fs-4">All Transactions</Link>
-            <Link to="/receive" className="page fs-4">Receive</Link>
-            <Link to="/send" className="page note fs-4">Send</Link>
+          <div className="notes">
+            <Link to="/allTransaction" className="page">All Transactions</Link>
+            <Link to="/receive" className="page">Receive</Link>
+            <Link to="/send" className="page note">Send</Link>
           </div>
         </div>
       </div>
