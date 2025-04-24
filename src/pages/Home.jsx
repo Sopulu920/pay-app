@@ -7,11 +7,12 @@ import LeftHand from "../components/LeftHand.jsx";
 function Home() {
     return (
         <>
-            <div className="d-flex justify-content-between">
+            <div className="face">
                 <LeftHand />
-                <div className="w-75 d-flex flex-column">
+                <div className="body">
                     <Header />
                     <Card />
+                    <br />
                     <TransferTable />
                     <Footer />
                 </div>

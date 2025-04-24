@@ -1,13 +1,15 @@
 import LeftHand from "../components/LeftHand.jsx";
 import HeaderTransfer from "../components/transferComponent/HeaderTransfer.jsx";
+import Footer from "../components/Footer.jsx";
 
 function Transfer() {
   return (
     <>
-      <div className="d-flex justify-content-between">
+      <div className="face">
         <LeftHand />
-        <div className="w-75 d-flex flex-column">
+        <div className="body">
           <HeaderTransfer />
+          <Footer />
         </div>
       </div>
     </>

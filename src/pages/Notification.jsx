@@ -1,13 +1,14 @@
 import LeftHand from "../components/LeftHand.jsx";
 import HeaderNotification from "../components/notificationComponent/HeaderNotification.jsx";
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer.jsx";
 
 function Notification() {
   return (
     <>
-      <div className="d-flex justify-content-between">
+      <div className="face">
         <LeftHand />
-        <div className="w-75 d-flex flex-column">
+        <div className="body">
           <HeaderNotification />
           <div className="d-flex justify-content-around">
             <Link to="/allTransaction" className="page fs-4">All Transactions</Link>
@@ -15,6 +16,7 @@ function Notification() {
             <Link to="/send" className="page fs-4">Send</Link>
           </div>
         </div>
+        <Footer />
       </div>
     </>
   );
