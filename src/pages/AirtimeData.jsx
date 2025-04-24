@@ -6,9 +6,9 @@ import BodyAirtimeData from "../components/airtimeComponent/BodyAirtimeData.jsx"
 function AirtimeData() {
   return (
     <>
-      <div className="d-flex justify-content-between">
+      <div className="face">
         <LeftHand />
-        <div className="w-75 d-flex flex-column">
+        <div className="body">
           <HeaderAirtimeData />
           <BodyAirtimeData />
           <Footer />

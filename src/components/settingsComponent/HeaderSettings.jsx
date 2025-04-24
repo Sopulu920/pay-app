@@ -1,7 +1,7 @@
 function HeaderSettings() {
     return (
         <>
-            <header className="p-3 m-3 fs-5 border rounded">
+            <header className="title">
                 <h1>Settings</h1>
             </header>
         </>

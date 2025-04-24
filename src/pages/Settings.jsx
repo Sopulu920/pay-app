@@ -6,9 +6,9 @@ import Footer from "../components/Footer.jsx";
 function Settings() {
   return (
     <>
-      <div className="d-flex justify-content-between">
+      <div className="face">
         <LeftHand />
-        <div className="w-75 d-flex flex-column">
+        <div className="body">
           <HeaderSettings />
           <BodySettings />
           <Footer />

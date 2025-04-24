@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 function AllTransaction() {
   return (
     <>
-      <div className="d-flex justify-content-between">
+      <div className="face">
         <LeftHand />
-        <div className="w-75 d-flex flex-column">
+        <div className="body">
           <HeaderNotification />
           <div className="d-flex justify-content-around">
             <Link to="/allTransaction" className="page note fs-4">All Transactions</Link>

@@ -2,7 +2,7 @@
 function HeaderTransfer() {
     return (
         <>
-            <header className="p-3 m-3 fs-5 border rounded">
+            <header className="title">
                 <h1>Transfer</h1>
             </header>
         </>

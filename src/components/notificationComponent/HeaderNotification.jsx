@@ -2,7 +2,7 @@
 function HeaderNotification() {
     return (
         <>
-            <header className="p-3 m-3 fs-5 border rounded">
+            <header className="title">
                 <h1>Notification</h1>
             </header>
         </>

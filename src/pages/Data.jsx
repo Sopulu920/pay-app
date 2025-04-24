@@ -9,9 +9,9 @@ import { Link } from "react-router-dom";
 function Data() {
   return (
     <>
-      <div className="d-flex justify-content-between">
+      <div className="face">
         <LeftHand />
-        <div className="d-flex flex-column">
+        <div className="body">
           <Link to="/airtimeData" className="p-3 m-3 fs-5 border rounded page">
             <h1><i className="fa-solid fa-arrow-left"></i> Data </h1>
           </Link>
