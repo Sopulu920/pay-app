@@ -1,12 +1,17 @@
+ body {
+   background-color: gainsboro;
+ }
+
  /* left hand side */
  .left {
    height: 690px;
-   background-color: gainsboro;
+   background-color: rgb(31, 117, 73);
    max-width: 25vh;
    display: flex;
    flex-direction: column;
    text-align: center;
-   border-radius: 5px;
+   border-start-end-radius: 5px;
+   border-end-end-radius: 5px;
    font-size: x-large;
  }
 
@@ -29,13 +34,14 @@
 
  /* title of all pages */
  .title {
-   padding: 3%;
+   padding: 2%;
    font-size: xx-large;
    border: solid 1px gainsboro;
    border-radius: 5px;
    max-width: 100%;
    display: flex;
    justify-content: space-between;
+   background-color: white;
  }
 
  /* body of all pages */
@@ -48,10 +54,12 @@
  .card-container {
    border-radius: 5px;
    border: solid 1px gainsboro;
+   width: 60vh;
+   background-color: white;
  }
 
  .card {
-   height: 50vh;
+   height: 30vh;
    background-color: black;
    margin: 3%;
    color: white;
@@ -59,19 +67,7 @@
    padding: 3%;
  }
 
- .cvv {
-   position: absolute;
-   right: 3%;
-   top: 40%;
- }
-
- .fullname {
-   position: absolute;
-   bottom: 3%;
- }
-
- /* under the home */
- .transfer {
+ .card-button {
    display: flex;
    justify-content: space-around;
    text-align: center;
@@ -83,6 +79,34 @@
    padding: 5px;
  }
 
+
+ .cvv {
+   position: absolute;
+   right: 3%;
+   top: 40%;
+ }
+
+ .card-chat {
+   display: flex;
+   justify-content: space-between;
+   max-height: max-content;
+ }
+
+ /* chat */
+ .chart-container {
+   border-radius: 5px;
+   border: solid 1px gainsboro;
+   width: 100vh;
+   padding: 1%;
+   background-color: white;
+ }
+
+ .fullname {
+   position: absolute;
+   bottom: 3%;
+ }
+
+ /* under the home */
  .footer {
    text-align: center;
    position: absolute;
@@ -95,8 +119,33 @@
    color: black;
  }
 
+ /* sim */
  .sim {
-   max-height: 50px;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+ }
+
+ .sim-button {
+   display: flex;
+   justify-content: space-around;
+   width: 75vh;
+   border: none;
+   border-radius: 5px;
+   margin: 1%;
+ }
+
+ .sim-button img {
+   width: 25vh;
+   border-radius: 50%;
+   object-fit: cover;
+   width: 100px;
+   height: 100px;
+ }
+
+ .sim-button p {
+   font-size: xx-large;
+   margin: 5%;
  }
 
  /* notification */
@@ -118,6 +167,7 @@
    justify-content: space-between;
    align-items: center;
    max-height: 100vh;
+   background-color: white;
  }
 
  .login-page img {
@@ -144,7 +194,7 @@
  }
 
  .login button {
-   background-color: black;
+   background-color: darkgreen;
    color: white;
    border: none;
    border-radius: 5px;
@@ -153,7 +203,7 @@
  }
 
  .login button:hover {
-   background-color: darkslategrey;
+   background-color: darkolivegreen;
  }
 
  .login h4 {
@@ -173,6 +223,7 @@
    justify-content: space-between;
    align-items: center;
    max-height: 100vh;
+   background-color: white;
  }
 
  .signup-page img {
@@ -196,7 +247,7 @@
  }
 
  .signup button {
-   background-color: black;
+   background-color: darkgreen;
    color: white;
    border: none;
    border-radius: 5px;
@@ -206,7 +257,7 @@
  }
 
  .signup button:hover {
-   background-color: darkslategrey;
+   background-color: darkolivegreen;
  }
 
  .signup h4 {
@@ -218,4 +269,34 @@
  .already {
    text-align: center;
    padding: 2%;
+ }
+
+ /* quick info at the top */
+ .info {
+   display: flex;
+   justify-content: space-around;
+   padding: 1%;
+   font-size: x-large;
+   background-color: white;
+   margin-top: 1%;
+   margin-bottom: 1%;
+   border-radius: 5px;
+ }
+
+ .info-button {
+   border: none;
+   border-radius: 5px;
+   padding: 0.3%;
+   background-color: gainsboro;
+   width: 25vh;
+   text-align: center;
+ }
+
+ .balance {
+   border: none;
+   border-radius: 5px;
+   padding: 0.3%;
+   background-color: green;
+   width: 25vh;
+   text-align: center;
  }

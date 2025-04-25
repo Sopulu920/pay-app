@@ -6,7 +6,7 @@ function Header() {
     return (
         <header className="title">            
                 <h1>Hi {user}</h1>
-                <p>Account Number</p>
+                <p>Amount</p>
         </header>
     );
 }
