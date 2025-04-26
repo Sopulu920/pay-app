@@ -3,7 +3,8 @@ import Card from "../components/homeComponent/Card.jsx";
 import Footer from "../components/Footer.jsx";
 import LeftHand from "../components/LeftHand.jsx";
 import Chart from "../components/homeComponent/Chart.jsx";
-import Info from "../components/homeComponent/Info.jsx"
+import Info from "../components/homeComponent/Info.jsx";
+import Table from "../components/homeComponent/Table.jsx";
 
 function Home() {
     return (
@@ -12,12 +13,12 @@ function Home() {
                 <LeftHand />
                 <div className="body">
                     <Header />
-                    <Info />                    
-                   <div className="card-chat">
-                    <Card />
-                    <Chart />
-                   </div>
-                    <br />
+                    <Info />
+                    <div className="card-chart">
+                        <Card />
+                        <Chart />
+                    </div>
+                    <Table />
                     <Footer />
                 </div>
             </div>

@@ -9,7 +9,6 @@ function Card() {
                     <p className="cvv">C V V</p>
                     <p className="fullname">Full Name</p>
                 </div>
-                <br />
                 <div className="card-button">
                     <Link className="page bottom">
                         <i className="fa-solid fa-plus"></i>

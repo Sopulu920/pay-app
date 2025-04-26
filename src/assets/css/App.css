@@ -34,7 +34,6 @@
 
  /* title of all pages */
  .title {
-   padding: 2%;
    font-size: xx-large;
    border: solid 1px gainsboro;
    border-radius: 5px;
@@ -59,7 +58,7 @@
  }
 
  .card {
-   height: 30vh;
+   height: 25vh;
    background-color: black;
    margin: 3%;
    color: white;
@@ -86,10 +85,10 @@
    top: 40%;
  }
 
- .card-chat {
+ .card-chart {
    display: flex;
    justify-content: space-between;
-   max-height: max-content;
+   max-height: 40vh;
  }
 
  /* chat */
@@ -299,4 +298,38 @@
    background-color: green;
    width: 25vh;
    text-align: center;
+ }
+
+ /* tables */
+ .table-container {
+   background-color: white;
+   border-radius: 5px;
+   text-align: center;
+   margin-top: 1%;
+ }
+
+ .table {
+   width: 150vh;
+ }
+
+ .table-head {
+   display: flex;
+   justify-content: space-between;
+   text-transform: uppercase;
+ }
+
+ .table-body {
+   display: flex;
+   justify-content: space-between;
+ }
+
+ .tbody-container {
+   max-height: 15vh;
+   overflow-y: scroll;
+ }
+
+ .recent{
+  text-align: left;
+  text-transform: uppercase;
+  padding: 1%;
  }
