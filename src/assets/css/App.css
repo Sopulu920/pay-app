@@ -5,8 +5,8 @@
  /* left hand side */
  .left {
    height: 690px;
-   background-color: darkgreen;
-   width: 50vh;
+   background-color: rgb(1, 44, 1);
+   width: 25vh;
    display: flex;
    flex-direction: column;
    text-align: center;
@@ -22,9 +22,22 @@
  }
 
  .icon {
-   padding-top: 25%;
-   padding-bottom: 25%;
+   width: 100%;
+   max-height: max-content;
  }
+ 
+ .active {
+  background-color: lightgreen;
+  border-radius: 5px;
+}
+
+.pay{
+  color: green;
+  font-size: xx-large;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
 
  /* face of the pages */
  .face {
@@ -47,7 +60,7 @@
  /* body of all pages */
  .body {
    width: 200vh;
-   margin: 1%;
+   margin: 0.5%;
    margin-top: 0%;
  }
 
@@ -123,7 +136,8 @@
  .chart-container {
    border-radius: 5px;
    border: solid 1px gainsboro;
-   width: 100vh;
+   width: 110vh;
+   height: 45vh;
    padding: 1%;
    background-color: white;
  }
@@ -144,10 +158,6 @@
    text-decoration: none;
    color: white;
    text-transform: capitalize;
- }
-
- .page:active {
-   color: lightgreen;
  }
 
  /* sim */
@@ -312,6 +322,7 @@
    margin-bottom: 1%;
    border-radius: 5px;
    max-width: 100vh;
+   max-height: 10vh;
  }
 
  .info-text {
@@ -355,7 +366,7 @@
    border: none;
    border-radius: 5px;
    padding: 0.3%;
-   background-color: green;
+   background-color:  rgb(1, 44, 1);
    width: 25vh;
    text-align: center;
    color: black;
@@ -364,6 +375,7 @@
    align-items: center;
    max-height: 12vh;
    text-transform: capitalize;
+   color: white;
  }
 
  .balance div {
@@ -374,6 +386,12 @@
    background-color: lightgreen;
    border-radius: 5px;
    padding: 3%;
+   color: black;
+ }
+
+ .info-amount {
+   margin: 0%;
+   font-size: x-large;
  }
 
  /* tables */
@@ -423,11 +441,15 @@
  .dashboard {
    display: flex;
    justify-content: space-around;
+   row-gap: 10;
  }
 
  .dashboard button {
    border: none;
-   border-radius: 20px;
+   border-radius: 50%;
+   width: 100%;
+   height: 100%;
+   font-size: large;
  }
 
  .dashboard input {

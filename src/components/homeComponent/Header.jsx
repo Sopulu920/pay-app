@@ -7,9 +7,9 @@ function Header() {
         <header className="title">            
                 <h1>dashboard</h1>
                 <div className="dashboard">
-                    <input type="text" placeholder="search"/>
                     <button> <i className="fa-solid fa-search"></i> </button>
                     <button> <i className="fa-solid fa-bell"></i></button>
+                    <input type="text" placeholder="search"/>
                 </div>
         </header>
     );

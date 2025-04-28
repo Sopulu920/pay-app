@@ -1,7 +1,7 @@
 function Info() {
-    const amount = Math.floor(Math.random()*1000);
-    const amount2 = Math.floor(Math.random()*10000);
-    const amount3 = Math.floor(Math.random()*10000);
+    const amount = Math.floor(Math.random() * 1000);
+    const amount2 = Math.floor(Math.random() * 10000);
+    const amount3 = Math.floor(Math.random() * 10000);
 
     return (
         <>
@@ -10,13 +10,15 @@ function Info() {
                     <i className="fa-solid fa-wallet"></i>
                     <div>
                         <p className="info-text">Wallet Balance</p>
-                        <i class="fa-solid fa-naira-sign"></i>
-                        <span>{amount3}</span>
+                        <div className="info-amount">
+                            <i class="fa-solid fa-naira-sign"></i>
+                            <span>{amount3}</span>
+                        </div>
                     </div>
                 </div>
                 <div className="income-expense">
                     <i className="income fa-solid fa-history"></i>
-                    <div>
+                    <div className="info-amount">
                         <p className="info-text"> income </p>
                         <i class="fa-solid fa-naira-sign"></i>
                         <span>{amount2}</span>
@@ -24,7 +26,7 @@ function Info() {
                 </div>
                 <div className="income-expense">
                     <i className="expense fa-solid fa-history"></i>
-                    <div>
+                    <div className="info-amount">
                         <p className="info-text"> spent </p>
                         <i class="fa-solid fa-naira-sign"></i>
                         <span>{amount}</span>
