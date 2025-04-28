@@ -13,10 +13,12 @@ function Home() {
                 <LeftHand />
                 <div className="body">
                     <Header />
-                    <Info />
                     <div className="card-chart">
+                        <div>
+                            <Info />
+                            <Chart />
+                        </div>
                         <Card />
-                        <Chart />
                     </div>
                     <Table />
                     <Footer />

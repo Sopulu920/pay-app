@@ -5,14 +5,14 @@
  /* left hand side */
  .left {
    height: 690px;
-   background-color: rgb(31, 117, 73);
-   max-width: 25vh;
+   background-color: darkgreen;
+   width: 50vh;
    display: flex;
    flex-direction: column;
    text-align: center;
    border-start-end-radius: 5px;
    border-end-end-radius: 5px;
-   font-size: x-large;
+   font-size: large;
  }
 
  .left img {
@@ -41,12 +41,14 @@
    display: flex;
    justify-content: space-between;
    background-color: white;
+   text-transform: capitalize;
  }
 
  /* body of all pages */
  .body {
    width: 200vh;
    margin: 1%;
+   margin-top: 0%;
  }
 
  /* card */
@@ -55,6 +57,32 @@
    border: solid 1px gainsboro;
    width: 60vh;
    background-color: white;
+   height: 56vh;
+ }
+
+ .card-container h4 {
+   text-transform: capitalize;
+   padding-left: 2%;
+   padding-top: 2%;
+ }
+
+ .view-button {
+   display: flex;
+   justify-content: center;
+   margin-top: 5%;
+ }
+
+ .view-button button {
+   border: solid 1px gainsboro;
+   border-radius: 5px;
+   text-transform: capitalize;
+   font-size: x-large;
+   background-color: white;
+   width: 95%;
+ }
+
+ .view-button button:hover {
+   background-color: gainsboro;
  }
 
  .card {
@@ -88,7 +116,7 @@
  .card-chart {
    display: flex;
    justify-content: space-between;
-   max-height: 40vh;
+   max-height: 60vh;
  }
 
  /* chat */
@@ -107,15 +135,19 @@
 
  /* under the home */
  .footer {
-   text-align: center;
-   position: absolute;
-   bottom: 0%;
-   left: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
  }
 
  .page {
    text-decoration: none;
-   color: black;
+   color: white;
+   text-transform: capitalize;
+ }
+
+ .page:active {
+   color: lightgreen;
  }
 
  /* sim */
@@ -276,19 +308,47 @@
    justify-content: space-around;
    padding: 1%;
    font-size: x-large;
-   background-color: white;
    margin-top: 1%;
    margin-bottom: 1%;
    border-radius: 5px;
+   max-width: 100vh;
  }
 
- .info-button {
+ .info-text {
+   padding: 0%;
+   margin: 0%;
+   font-size: medium;
+ }
+
+ .income-expense {
    border: none;
    border-radius: 5px;
    padding: 0.3%;
-   background-color: gainsboro;
+   background-color: white;
    width: 25vh;
    text-align: center;
+   color: black;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   max-height: 12vh;
+   text-transform: capitalize;
+ }
+
+ .income-expense div {
+   text-align: left;
+ }
+
+ .income {
+   background-color: lightgreen;
+   padding: 2%;
+   border-radius: 5px;
+ }
+
+ .expense {
+   background-color: lightcoral;
+   padding: 2%;
+   border-radius: 5px;
  }
 
  .balance {
@@ -298,6 +358,22 @@
    background-color: green;
    width: 25vh;
    text-align: center;
+   color: black;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   max-height: 12vh;
+   text-transform: capitalize;
+ }
+
+ .balance div {
+   text-align: left;
+ }
+
+ .fa-wallet {
+   background-color: lightgreen;
+   border-radius: 5px;
+   padding: 3%;
  }
 
  /* tables */
@@ -306,6 +382,7 @@
    border-radius: 5px;
    text-align: center;
    margin-top: 1%;
+   max-height: 30vh;
  }
 
  .table {
@@ -324,16 +401,39 @@
  }
 
  .table-body:hover {
-  background-color: gainsboro;
-}
+   background-color: gainsboro;
+ }
 
  .tbody-container {
-   max-height: 15vh;
+   max-height: 10vh;
    overflow-y: scroll;
  }
 
- .recent{
-  text-align: left;
-  text-transform: uppercase;
-  padding: 1%;
+ .recent {
+   display: flex;
+   justify-content: space-between;
+   text-transform: uppercase;
+   padding: 1%;
+ }
+
+ .recent-view {
+   color: grey;
+ }
+
+ .dashboard {
+   display: flex;
+   justify-content: space-around;
+ }
+
+ .dashboard button {
+   border: none;
+   border-radius: 20px;
+ }
+
+ .dashboard input {
+   border: solid 1px gainsboro;
+   border-radius: 50px;
+   font-size: x-large;
+   max-height: max-content;
+   margin-top: 1%;
  }

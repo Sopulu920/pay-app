@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 // months of the year
 const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 //data fro chart
@@ -47,14 +49,17 @@ function Table() {
     return (
         <>
             <div className="table-container">
-                <h4 className="recent">recent transaction</h4>
+                <div className="recent">
+                    <h5>recent transaction</h5>
+                    <Link className="recent-view">view all <i className="fa-solid fa-greater-than"></i> </Link>
+                </div>
                 <table className="table">
                     <thead>
                         <tr className="table-head">
                             <th>date</th>
                             <th>description</th>
                             <th>statues</th>
-                            <th>amount(naira)</th>
+                            <th>amount</th>
                         </tr>
                     </thead>
                 </table>
@@ -66,7 +71,7 @@ function Table() {
                                     <td>{data.date}</td>
                                     <td>{data.description}</td>
                                     <td>{data.statues ? "successful" : "failed"}</td>
-                                    <td>{data.amount}</td>
+                                    <td><i className="fa-solid fa-naira-sign"></i>{data.amount}</td>
                                 </tr>
                             ))}
                         </tbody>

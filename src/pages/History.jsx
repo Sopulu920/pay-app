@@ -1,15 +1,15 @@
 import LeftHand from "../components/LeftHand.jsx";
-import HeaderNotification from "../components/notificationComponent/HeaderNotification.jsx";
+import HeaderHistory from "../components/historyComponent/HeaderHistory.jsx";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer.jsx";
 
-function Notification() {
+function History() {
   return (
     <>
       <div className="face">
         <LeftHand />
         <div className="body">
-          <HeaderNotification />
+          <HeaderHistory />
           <div className="notes">
             <Link to="/allTransaction" className="page">All Transactions</Link>
             <Link to="/receive" className="page">Receive</Link>
@@ -22,4 +22,4 @@ function Notification() {
   );
 }
 
-export default Notification;
+export default History;

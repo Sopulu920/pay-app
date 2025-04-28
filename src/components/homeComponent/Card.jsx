@@ -4,6 +4,7 @@ function Card() {
     return (
         <>
             <div className="card-container">
+                <h4>virtual card</h4>
                 <div className="card">
                     <p className="">Account Number</p>
                     <p className="cvv">C V V</p>
@@ -22,6 +23,9 @@ function Card() {
                         <i className="fa-solid fa-sack-dollar"></i>
                         <p>Deposit</p>
                     </Link>
+                </div>
+                <div className="view-button">
+                    <button>view card history</button>
                 </div>
             </div>
         </>

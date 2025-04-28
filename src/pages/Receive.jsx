@@ -1,5 +1,5 @@
 import LeftHand from "../components/LeftHand.jsx";
-import HeaderNotification from "../components/notificationComponent/HeaderNotification.jsx";
+import HeaderHistory from "../components/historyComponent/HeaderHistory.jsx";
 import { Link } from "react-router-dom";
 
 function Receive() {
@@ -8,7 +8,7 @@ function Receive() {
       <div className="face">
         <LeftHand />
         <div className="body">
-          <HeaderNotification />
+          <HeaderHistory />
           <div className="notes">
             <Link to="/allTransaction" className="page">All Transactions</Link>
             <Link to="/receive" className="page note">Receive</Link>
