@@ -1,14 +1,28 @@
 import { Link } from "react-router-dom";
 
+const totalBalance = Math.floor(Math.random() * 1000);
+function cardNumber() {
+   return Array.from({ length: 16 }, () => Math.floor(Math.random() * 10)).join(" ");   
+}
+const number = cardNumber();
+
 function Card() {
     return (
         <>
             <div className="card-container">
                 <h4>virtual card</h4>
                 <div className="card">
-                    <p className="">Account Number</p>
+                    <div className="total">
+                        <div className="total-balance">
+                            total balance
+                        </div>
+                        <div>
+                            <i className="fa-solid fa-naira-sign"></i>
+                            <span>{totalBalance}</span>
+                        </div>
+                    </div>
                     <p className="cvv">C V V</p>
-                    <p className="fullname">Full Name</p>
+                    <p className="card-number">{number}</p>
                 </div>
                 <div className="card-button">
                     <Link className="page bottom">

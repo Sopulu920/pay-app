@@ -1,5 +1,5 @@
  body {
-   background-color: gainsboro;
+   background-color: ghostwhite;
  }
 
  /* left hand side */
@@ -9,7 +9,7 @@
    width: 25vh;
    display: flex;
    flex-direction: column;
-   text-align: center;
+   text-align: left;
    border-start-end-radius: 5px;
    border-end-end-radius: 5px;
    font-size: large;
@@ -25,19 +25,24 @@
    width: 100%;
    max-height: max-content;
  }
- 
- .active {
-  background-color: lightgreen;
-  border-radius: 5px;
-}
 
-.pay{
-  color: green;
-  font-size: xx-large;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
+ .active {
+   background-color: yellowgreen;
+   border-radius: 5px;
+ }
+
+ .pay {
+   color: green;
+   font-size: xx-large;
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+   margin-bottom: 25%;
+ }
+
+ .pay span {
+   color: white;
+ }
 
  /* face of the pages */
  .face {
@@ -59,7 +64,7 @@
 
  /* body of all pages */
  .body {
-   width: 200vh;
+   width: 100%;
    margin: 0.5%;
    margin-top: 0%;
  }
@@ -100,7 +105,7 @@
 
  .card {
    height: 25vh;
-   background-color: black;
+   background-color: rgb(1, 44, 1);
    margin: 3%;
    color: white;
    font-size: x-large;
@@ -126,32 +131,45 @@
    top: 40%;
  }
 
+ .card-number {
+   position: absolute;
+   bottom: 3%;
+   max-width: 70%;
+   font-size: medium;
+ }
+
+ .total-balance {
+   font-size: medium;
+   text-transform: capitalize;
+ }
+
  .card-chart {
    display: flex;
    justify-content: space-between;
    max-height: 60vh;
  }
 
- /* chat */
+ /* chart */
  .chart-container {
    border-radius: 5px;
    border: solid 1px gainsboro;
    width: 110vh;
-   height: 45vh;
+   height: 35vh;
    padding: 1%;
    background-color: white;
  }
 
- .fullname {
-   position: absolute;
-   bottom: 3%;
- }
-
- /* under the home */
+ /* foooter */
  .footer {
    display: flex;
    justify-content: center;
    align-items: center;
+ }
+
+ .footer-home {
+   position: absolute;
+   bottom: 0%;
+   left: 50%;
  }
 
  .page {
@@ -332,7 +350,7 @@
  }
 
  .income-expense {
-   border: none;
+   border: solid 1px gainsboro;
    border-radius: 5px;
    padding: 0.3%;
    background-color: white;
@@ -351,13 +369,15 @@
  }
 
  .income {
-   background-color: lightgreen;
+   background-color: rgb(162, 216, 55, 0.3);
+   color: greenyellow;
    padding: 2%;
    border-radius: 5px;
  }
 
  .expense {
-   background-color: lightcoral;
+   background-color: rgb(255, 215, 142, 0.5);
+   color: orange;
    padding: 2%;
    border-radius: 5px;
  }
@@ -366,7 +386,7 @@
    border: none;
    border-radius: 5px;
    padding: 0.3%;
-   background-color:  rgb(1, 44, 1);
+   background-color: rgb(1, 44, 1);
    width: 25vh;
    text-align: center;
    color: black;
@@ -383,10 +403,10 @@
  }
 
  .fa-wallet {
-   background-color: lightgreen;
+   background-color: rgba(10, 134, 10, 0.5);
    border-radius: 5px;
    padding: 3%;
-   color: black;
+   color: white;
  }
 
  .info-amount {
@@ -397,10 +417,12 @@
  /* tables */
  .table-container {
    background-color: white;
+   border: solid 1px gainsboro;
    border-radius: 5px;
    text-align: center;
    margin-top: 1%;
-   max-height: 30vh;
+   height: 50%;
+   width: 115%;
  }
 
  .table {
@@ -409,13 +431,16 @@
 
  .table-head {
    display: flex;
-   justify-content: space-between;
+   flex-direction: row;
+   gap: 12%;
    text-transform: uppercase;
  }
 
  .table-body {
    display: flex;
-   justify-content: space-between;
+   flex-direction: row;
+   gap: 13%;
+   text-transform: uppercase;
  }
 
  .table-body:hover {
@@ -425,6 +450,7 @@
  .tbody-container {
    max-height: 10vh;
    overflow-y: scroll;
+   overflow-x: hidden;
  }
 
  .recent {
@@ -436,26 +462,84 @@
 
  .recent-view {
    color: grey;
+   text-decoration: none;
+   text-transform: capitalize;
+ }
+
+ /* info chart table container*/
+
+ .ict {
+   width: 95vh;
  }
 
  .dashboard {
    display: flex;
    justify-content: space-around;
-   row-gap: 10;
+   width: 40%;
  }
 
  .dashboard button {
-   border: none;
+   border: solid 1px gainsboro;
    border-radius: 50%;
-   width: 100%;
-   height: 100%;
+   width: 10%;
+   height: 60%;
    font-size: large;
+   margin-top: 2%;
+   background-color: transparent;
  }
 
- .dashboard input {
+ .user {
+   height: max-content;
+   font-size: large;
+   display: flex;
+   justify-content: space-evenly;
    border: solid 1px gainsboro;
-   border-radius: 50px;
-   font-size: x-large;
-   max-height: max-content;
+   border-radius: 20px;
    margin-top: 1%;
+   width: 50%;
+   padding: 1%;
+ }
+
+ .user img {
+   width: 15%;
+   border-radius: 100px;
+ }
+
+ /* welcome */
+ .welcome {
+   display: flex;
+   justify-content: space-between;
+   margin: 1%;
+ }
+
+ .welcome-back {
+   font-size: x-large;
+   text-transform: capitalize;
+   font-weight: bold;
+ }
+
+ .welcome-receive {
+   border-radius: 5px;
+   border: solid 1px rgb(1, 44, 1);
+   background-color: transparent;
+   text-transform: capitalize;
+   padding: 2%;
+   font-size: large;
+   color: rgb(1, 44, 1);
+ }
+
+ .welcome-send {
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(10, 134, 10, 0.5);
+  text-transform: capitalize;
+  padding: 2%;
+  font-size: large;
+  color: rgb(1, 44, 1);
+ }
+
+ .welcome-button{
+  display: flex;
+  justify-content: space-between;
+  width: 20%;
  }

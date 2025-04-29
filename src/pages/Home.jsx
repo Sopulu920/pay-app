@@ -5,6 +5,7 @@ import LeftHand from "../components/LeftHand.jsx";
 import Chart from "../components/homeComponent/Chart.jsx";
 import Info from "../components/homeComponent/Info.jsx";
 import Table from "../components/homeComponent/Table.jsx";
+import Welcome from "../components/homeComponent/Welcome.jsx";
 
 function Home() {
     return (
@@ -13,15 +14,15 @@ function Home() {
                 <LeftHand />
                 <div className="body">
                     <Header />
+                    <Welcome />
                     <div className="card-chart">
-                        <div>
+                        <div className="ict">
                             <Info />
                             <Chart />
+                            <Table />
                         </div>
                         <Card />
                     </div>
-                    <Table />
-                    <Footer />
                 </div>
             </div>
         </>

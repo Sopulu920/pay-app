@@ -1,6 +1,7 @@
-
+import Placeholder from "../../assets/images/placeholder.jpg"
 let lastName = "Morah";
-let user = lastName
+let firstName = "Sopuluchukwu";
+export const user = {lastName, firstName};
 
 function Header() {
     return (
@@ -9,7 +10,10 @@ function Header() {
                 <div className="dashboard">
                     <button> <i className="fa-solid fa-search"></i> </button>
                     <button> <i className="fa-solid fa-bell"></i></button>
-                    <input type="text" placeholder="search"/>
+                    <div className="user">
+                        <img src={Placeholder} alt="" />
+                        <span>{`${user.lastName} , ${user.firstName}`}</span>
+                    </div>
                 </div>
         </header>
     );
