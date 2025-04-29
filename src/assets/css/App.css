@@ -55,7 +55,7 @@
    font-size: xx-large;
    border: solid 1px gainsboro;
    border-radius: 5px;
-   max-width: 100%;
+   width: 100%;
    display: flex;
    justify-content: space-between;
    background-color: white;
@@ -73,21 +73,23 @@
  .card-container {
    border-radius: 5px;
    border: solid 1px gainsboro;
-   width: 60vh;
+   width: 50vh;
    background-color: white;
-   height: 56vh;
+   max-height: max-content;
  }
 
  .card-container h4 {
    text-transform: capitalize;
    padding-left: 2%;
    padding-top: 2%;
+   font-size: large;
  }
 
  .view-button {
    display: flex;
    justify-content: center;
-   margin-top: 5%;
+   margin: 2%;
+   font-size: large;
  }
 
  .view-button button {
@@ -104,7 +106,7 @@
  }
 
  .card {
-   height: 25vh;
+   height: 20vh;
    background-color: rgb(1, 44, 1);
    margin: 3%;
    color: white;
@@ -121,14 +123,21 @@
  .bottom {
    background-color: gainsboro;
    border-radius: 5px;
-   padding: 5px;
+   padding: 15%;
+   margin: 5%;
+   color: black;
  }
 
+ .btn-container p {
+   text-transform: capitalize;
+   margin: 3%;
+ }
 
- .cvv {
+ .card-date {
    position: absolute;
    right: 3%;
-   top: 40%;
+   bottom: 3%;
+   font-size: medium;
  }
 
  .card-number {
@@ -143,18 +152,26 @@
    text-transform: capitalize;
  }
 
+ .master-card img{
+  width: 15%;  
+  border-radius: 5px;
+  position: absolute;
+  right: 3%;
+  top: 10%;
+ }
+
+ 
  .card-chart {
    display: flex;
    justify-content: space-between;
-   max-height: 60vh;
  }
 
  /* chart */
  .chart-container {
    border-radius: 5px;
    border: solid 1px gainsboro;
-   width: 110vh;
-   height: 35vh;
+   width: 120vh;
+   height: 38vh;
    padding: 1%;
    background-color: white;
  }
@@ -333,13 +350,13 @@
  /* quick info at the top */
  .info {
    display: flex;
-   justify-content: space-around;
+   flex-direction: row;
+   column-gap: 30px;
    padding: 1%;
    font-size: x-large;
-   margin-top: 1%;
    margin-bottom: 1%;
    border-radius: 5px;
-   max-width: 100vh;
+   width: 120.5%;
    max-height: 10vh;
  }
 
@@ -352,9 +369,9 @@
  .income-expense {
    border: solid 1px gainsboro;
    border-radius: 5px;
-   padding: 0.3%;
+   padding: 2%;
    background-color: white;
-   width: 25vh;
+   width: 50vh;
    text-align: center;
    color: black;
    display: flex;
@@ -385,9 +402,8 @@
  .balance {
    border: none;
    border-radius: 5px;
-   padding: 0.3%;
    background-color: rgb(1, 44, 1);
-   width: 25vh;
+   width: 50vh;
    text-align: center;
    color: black;
    display: flex;
@@ -396,6 +412,7 @@
    max-height: 12vh;
    text-transform: capitalize;
    color: white;
+   padding: 2%;
  }
 
  .balance div {
@@ -421,8 +438,8 @@
    border-radius: 5px;
    text-align: center;
    margin-top: 1%;
-   height: 50%;
-   width: 115%;
+   height: 40%;
+   width: 120%;
  }
 
  .table {
@@ -432,15 +449,18 @@
  .table-head {
    display: flex;
    flex-direction: row;
-   gap: 12%;
+   gap: 15%;
    text-transform: uppercase;
+   background-color: gainsboro;
+   width: 80%;
  }
 
  .table-body {
    display: flex;
    flex-direction: row;
-   gap: 13%;
+   gap: 15%;
    text-transform: uppercase;
+   font-size: small;
  }
 
  .table-body:hover {
@@ -448,7 +468,7 @@
  }
 
  .tbody-container {
-   max-height: 10vh;
+   max-height: 15vh;
    overflow-y: scroll;
    overflow-x: hidden;
  }
@@ -458,6 +478,7 @@
    justify-content: space-between;
    text-transform: uppercase;
    padding: 1%;
+   font-size: large;
  }
 
  .recent-view {
@@ -469,12 +490,14 @@
  /* info chart table container*/
 
  .ict {
-   width: 95vh;
+   width: 100vh;
  }
 
+ /* dashboard bar */
  .dashboard {
    display: flex;
-   justify-content: space-around;
+   flex-direction: row;
+   justify-content: end;
    width: 40%;
  }
 
@@ -529,17 +552,65 @@
  }
 
  .welcome-send {
-  border-radius: 5px;
-  border: none;
-  background-color: rgba(10, 134, 10, 0.5);
-  text-transform: capitalize;
-  padding: 2%;
-  font-size: large;
-  color: rgb(1, 44, 1);
+   border-radius: 5px;
+   border: none;
+   background-color: rgba(80, 240, 80, 0.5);
+   text-transform: capitalize;
+   padding: 2%;
+   font-size: large;
+   color: rgb(1, 44, 1);
  }
 
- .welcome-button{
-  display: flex;
-  justify-content: space-between;
-  width: 20%;
+ .welcome-button {
+   display: flex;
+   justify-content: space-between;
+   width: 20%;
+ }
+
+ /* schedule */
+ .schedule-container {
+   background-color: white;
+   border: solid 1px gainsboro;
+   border-radius: 5px;
+   padding: 2%;
+   margin-top: 2%;
+ }
+
+ .schedule-transfer {
+   display: flex;
+   justify-content: space-between;
+   text-transform: capitalize;
+ }
+
+ .schedule-transfer p {
+   font-size: large;
+   font-weight: bold;
+ }
+
+ .individual {
+   display: flex;
+   justify-content: space-between;
+   margin: 1.7%;
+ }
+
+ .individual-id {
+   display: flex;
+   flex-direction: row;
+ }
+
+ .individual-name {
+   margin: 0%;
+   font-size: medium;
+   font-weight: bold;
+ }
+
+ .individual-date {
+   margin: 0%;
+   font-size: small;
+ }
+
+ .individual img {
+   width: 5vh;
+   height: 5vh;
+   border-radius: 50px;
  }

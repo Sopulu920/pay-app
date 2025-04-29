@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import Mastercard from "../../assets/images/mastercard.jpg";
 
 const totalBalance = Math.floor(Math.random() * 1000);
 function cardNumber() {
-   return Array.from({ length: 16 }, () => Math.floor(Math.random() * 10)).join(" ");   
+    return Array.from({ length: 16 }, () => Math.floor(Math.random() * 10)).join(" ");
 }
 const number = cardNumber();
 
@@ -12,31 +13,43 @@ function Card() {
             <div className="card-container">
                 <h4>virtual card</h4>
                 <div className="card">
-                    <div className="total">
-                        <div className="total-balance">
-                            total balance
+                    <div className="card-top">
+                        <div className="total">
+                            <div className="total-balance">
+                                total balance
+                            </div>
+                            <div>
+                                <i className="fa-solid fa-naira-sign"></i>
+                                <span>{totalBalance}</span>
+                            </div>
                         </div>
-                        <div>
-                            <i className="fa-solid fa-naira-sign"></i>
-                            <span>{totalBalance}</span>
+                        <div className="master-card">
+                            <img src={Mastercard} alt="" />
                         </div>
                     </div>
-                    <p className="cvv">C V V</p>
+                    <p className="card-date">09/25</p>
                     <p className="card-number">{number}</p>
                 </div>
                 <div className="card-button">
-                    <Link className="page bottom">
-                        <i className="fa-solid fa-plus"></i>
+                    <div className="btn-container">
+                        <Link className="bottom">
+                            <i className="fa-solid fa-plus"></i>
+                        </Link>
                         <p>withdrawal</p>
-                    </Link>
-                    <Link className="page bottom">
-                        <i className="fa-solid fa-right-left"></i>
-                        <p>Transfer</p>
-                    </Link>
-                    <Link className="page bottom">
-                        <i className="fa-solid fa-sack-dollar"></i>
-                        <p>Deposit</p>
-                    </Link>
+                    </div>
+                    <div className="btn-container">
+                        <Link className="bottom">
+                            <i className="fa-solid fa-right-left"></i>
+                        </Link>
+                        <p>transfer</p>
+                    </div>
+                    <div className="btn-container">
+                        <Link className="bottom">
+                            <i className="fa-solid fa-sack-dollar"></i>
+                        </Link>
+                        <p>deposit</p>
+                    </div>
+
                 </div>
                 <div className="view-button">
                     <button>view card history</button>

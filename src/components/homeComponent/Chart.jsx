@@ -42,7 +42,7 @@ function Chart() {
         <div className="chart-container">
             <ResponsiveContainer width="100%" height="100%">
                 <AreaChart data={chartData}>
-                    <CartesianGrid strokeDasharray="5 5" />
+                    <CartesianGrid strokeDasharray="" vertical={false} />
                     <XAxis dataKey="month" />
                     <YAxis />
                     <Tooltip />

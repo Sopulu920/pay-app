@@ -6,6 +6,7 @@ import Chart from "../components/homeComponent/Chart.jsx";
 import Info from "../components/homeComponent/Info.jsx";
 import Table from "../components/homeComponent/Table.jsx";
 import Welcome from "../components/homeComponent/Welcome.jsx";
+import Schedule from "../components/homeComponent/Schedule.jsx";
 
 function Home() {
     return (
@@ -21,7 +22,11 @@ function Home() {
                             <Chart />
                             <Table />
                         </div>
-                        <Card />
+                        <div className="cs">
+                            <Card />
+                            <Schedule />
+                        </div>
+                        
                     </div>
                 </div>
             </div>
