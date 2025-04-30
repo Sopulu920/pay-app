@@ -1,13 +1,30 @@
-import { Link } from "react-router-dom";
 import Mastercard from "../../assets/images/mastercard.jpg";
+import { useState } from "react";
+import WithdrawalModal from "./WithdrawalModal";
+import TransferModal from "./TransferModal";
+import DepositModal from "./DepositModal";
 
-const totalBalance = Math.floor(Math.random() * 1000);
+const totalBalance = Math.floor(Math.random() * 1000); //generate random numbers for total
+
 function cardNumber() {
-    return Array.from({ length: 16 }, () => Math.floor(Math.random() * 10)).join("");
+    return Array.from({ length: 16 }, () => Math.floor(Math.random() * 10)).join(""); //generate random numbers for card number
 }
-const number = cardNumber();
+const number = cardNumber(); //to call random number for card
 
 function Card() {
+    const [withdrawalModal, setWithdrawalModal] = useState(false); //to track state
+    const [transferModal, setTransferModal] = useState(false); //to track state
+    const [depositModal, setDepositModal] = useState(false); //to track state
+
+    const toggleWithdrawalModal = () => {
+        setWithdrawalModal(!withdrawalModal)
+    }
+    const toggleTransferModal = () => {
+        setTransferModal(!transferModal)
+    }
+    const toggleDepositModal = () => {
+        setDepositModal(!depositModal)
+    }
     return (
         <>
             <div className="card-container">
@@ -32,21 +49,21 @@ function Card() {
                 </div>
                 <div className="card-button">
                     <div className="btn-container">
-                        <Link className="bottom">
+                        <button onClick={toggleWithdrawalModal} className="bottom">
                             <i className="fa-solid fa-plus"></i>
-                        </Link>
+                        </button>
                         <p>withdrawal</p>
                     </div>
                     <div className="btn-container">
-                        <Link className="bottom">
+                        <button onClick={toggleTransferModal} className="bottom">
                             <i className="fa-solid fa-right-left"></i>
-                        </Link>
+                        </button>
                         <p>transfer</p>
                     </div>
                     <div className="btn-container">
-                        <Link className="bottom">
+                        <button onClick={toggleDepositModal} className="bottom">
                             <i className="fa-solid fa-sack-dollar"></i>
-                        </Link>
+                        </button>
                         <p>deposit</p>
                     </div>
 
@@ -55,6 +72,9 @@ function Card() {
                     <button>view card history</button>
                 </div>
             </div>
+            {withdrawalModal && <WithdrawalModal toggleWithdrawalModal={toggleWithdrawalModal} />}
+            {depositModal && <DepositModal toggleDepositModal={toggleDepositModal} />}
+            {transferModal && <TransferModal toggleTransferModal={toggleTransferModal} />}
         </>
     );
 }
