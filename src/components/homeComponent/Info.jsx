@@ -19,7 +19,7 @@ function Info() {
                 <div className="income-expense">
                     <i className="income fa-solid fa-history"></i>
                     <div className="info-amount">
-                        <p className="info-text"> income </p>
+                        <p className="info-text2"> income </p>
                         <i class="fa-solid fa-naira-sign"></i>
                         <span>{amount2}</span>
                     </div>
@@ -27,7 +27,7 @@ function Info() {
                 <div className="income-expense">
                     <i className="expense fa-solid fa-history"></i>
                     <div className="info-amount">
-                        <p className="info-text"> spent </p>
+                        <p className="info-text2"> spent </p>
                         <i class="fa-solid fa-naira-sign"></i>
                         <span>{amount}</span>
                     </div>

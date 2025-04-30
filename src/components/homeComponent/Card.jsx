@@ -3,7 +3,7 @@ import Mastercard from "../../assets/images/mastercard.jpg";
 
 const totalBalance = Math.floor(Math.random() * 1000);
 function cardNumber() {
-    return Array.from({ length: 16 }, () => Math.floor(Math.random() * 10)).join(" ");
+    return Array.from({ length: 16 }, () => Math.floor(Math.random() * 10)).join("");
 }
 const number = cardNumber();
 

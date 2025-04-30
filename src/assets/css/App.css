@@ -23,6 +23,7 @@
 
  .icon {
    width: 100%;
+   padding: 3%;
    max-height: max-content;
  }
 
@@ -120,7 +121,7 @@
  }
 
  .bottom {
-   background-color: gainsboro;
+   background-color: ghostwhite;
    border-radius: 10px;
    padding: 10%;
    margin: 5%;
@@ -148,7 +149,8 @@
  }
 
  .total-balance {
-   font-size: medium;
+   font-size: 0.8rem;
+   color: rgb(201, 199, 199);
    text-transform: capitalize;
  }
 
@@ -171,7 +173,7 @@
    border-radius: 5px;
    border: solid 1px gainsboro;
    width: 120vh;
-   height: 38vh;
+   height: 35vh;
    padding: 1%;
    background-color: white;
  }
@@ -354,7 +356,7 @@
    column-gap: 30px;
    padding: 1%;
    font-size: x-large;
-   margin-bottom: 1%;
+   margin-bottom: 2%;
    border-radius: 5px;
    width: 120.5%;
    max-height: 10vh;
@@ -363,14 +365,23 @@
  .info-text {
    padding: 0%;
    margin: 0%;
-   font-size: medium;
+   font-size: 0.7rem;
    font-weight: normal;
+   color: rgb(201, 199, 199);
  }
+
+ .info-text2 {
+  padding: 0%;
+  margin: 0%;
+  font-size: 1rem;
+  font-weight: normal;
+  color: rgb(201, 199, 199);
+}
 
  .income-expense {
    border: solid 1px gainsboro;
    border-radius: 5px;
-   padding: 3.5%;
+   padding: 4%;
    background-color: white;
    width: 50vh;
    text-align: center;
@@ -415,7 +426,7 @@
    max-height: 13vh;
    text-transform: capitalize;
    color: white;
-   padding: 3.5%;
+   padding: 4%;
  }
 
  .balance div {
@@ -491,7 +502,7 @@
    color: grey;
    text-decoration: none;
    text-transform: capitalize;
- }
+   font-size: medium }
 
  /* info chart table container*/
 
@@ -508,14 +519,18 @@
  }
 
  .dashboard button {
-   border: solid 1px gainsboro;
+   border: none;
    border-radius: 50%;
-   width: 10%;
+   width: 8%;
    height: 60%;
    font-size: large;
    margin-top: 2%;
    background-color: transparent;
  }
+
+ .dashboard button:hover {
+  background-color: gainsboro;
+}
 
  .user {
    height: max-content;
@@ -530,7 +545,7 @@
  }
 
  .user img {
-   width: 15%;
+   width: 10%;
    border-radius: 100px;
  }
 
@@ -564,11 +579,10 @@
    font-size: large;
    color: rgb(1, 44, 1);
  }
-
+x
  .welcome-button {
    display: flex;
-   justify-content: space-between;
-   width: 20%;
+   flex-direction: row;
  }
 
  /* schedule */
@@ -576,7 +590,8 @@
    background-color: white;
    border: solid 1px gainsboro;
    border-radius: 5px;
-   padding: 2%;
+   padding: 4%;
+   padding-bottom: 0%;
    margin-top: 2%;
  }
 
