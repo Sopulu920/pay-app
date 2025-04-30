@@ -89,14 +89,13 @@
    display: flex;
    justify-content: center;
    margin: 2%;
-   font-size: large;
  }
 
  .view-button button {
    border: solid 1px gainsboro;
    border-radius: 5px;
    text-transform: capitalize;
-   font-size: x-large;
+   font-size: large;
    background-color: white;
    width: 95%;
  }
@@ -106,7 +105,7 @@
  }
 
  .card {
-   height: 20vh;
+   height: 21vh;
    background-color: rgb(1, 44, 1);
    margin: 3%;
    color: white;
@@ -122,10 +121,11 @@
 
  .bottom {
    background-color: gainsboro;
-   border-radius: 5px;
-   padding: 15%;
+   border-radius: 10px;
+   padding: 10%;
    margin: 5%;
    color: black;
+   max-height: max-content;
  }
 
  .btn-container p {
@@ -152,15 +152,15 @@
    text-transform: capitalize;
  }
 
- .master-card img{
-  width: 15%;  
-  border-radius: 5px;
-  position: absolute;
-  right: 3%;
-  top: 10%;
+ .master-card img {
+   width: 15%;
+   border-radius: 5px;
+   position: absolute;
+   right: 3%;
+   top: 10%;
  }
 
- 
+
  .card-chart {
    display: flex;
    justify-content: space-between;
@@ -364,12 +364,13 @@
    padding: 0%;
    margin: 0%;
    font-size: medium;
+   font-weight: normal;
  }
 
  .income-expense {
    border: solid 1px gainsboro;
    border-radius: 5px;
-   padding: 2%;
+   padding: 3.5%;
    background-color: white;
    width: 50vh;
    text-align: center;
@@ -387,16 +388,18 @@
 
  .income {
    background-color: rgb(162, 216, 55, 0.3);
-   color: greenyellow;
-   padding: 2%;
+   color: rgb(160, 252, 21);
+   padding: 6%;
    border-radius: 5px;
+   font-size: x-large;
  }
 
  .expense {
    background-color: rgb(255, 215, 142, 0.5);
    color: orange;
-   padding: 2%;
+   padding: 6%;
    border-radius: 5px;
+   font-size: x-large;
  }
 
  .balance {
@@ -409,10 +412,10 @@
    display: flex;
    flex-direction: row;
    align-items: center;
-   max-height: 12vh;
+   max-height: 13vh;
    text-transform: capitalize;
    color: white;
-   padding: 2%;
+   padding: 3.5%;
  }
 
  .balance div {
@@ -422,13 +425,16 @@
  .fa-wallet {
    background-color: rgba(10, 134, 10, 0.5);
    border-radius: 5px;
-   padding: 3%;
+   padding: 6%;
    color: white;
+   font-size: x-large;
  }
 
  .info-amount {
    margin: 0%;
-   font-size: x-large;
+   font-size: large;
+   font-weight: bold;
+   padding: 5%;
  }
 
  /* tables */
@@ -542,21 +548,19 @@
  }
 
  .welcome-receive {
-   border-radius: 5px;
+   border-radius: 10px;
    border: solid 1px rgb(1, 44, 1);
    background-color: transparent;
    text-transform: capitalize;
-   padding: 2%;
    font-size: large;
    color: rgb(1, 44, 1);
  }
 
  .welcome-send {
-   border-radius: 5px;
+   border-radius: 10px;
    border: none;
    background-color: rgba(80, 240, 80, 0.5);
    text-transform: capitalize;
-   padding: 2%;
    font-size: large;
    color: rgb(1, 44, 1);
  }
