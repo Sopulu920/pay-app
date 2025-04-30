@@ -389,7 +389,7 @@
  .income {
    background-color: rgb(162, 216, 55, 0.3);
    color: rgb(160, 252, 21);
-   padding: 6%;
+   padding: 4%;
    border-radius: 5px;
    font-size: x-large;
  }
@@ -397,7 +397,7 @@
  .expense {
    background-color: rgb(255, 215, 142, 0.5);
    color: orange;
-   padding: 6%;
+   padding: 4%;
    border-radius: 5px;
    font-size: x-large;
  }
@@ -425,7 +425,7 @@
  .fa-wallet {
    background-color: rgba(10, 134, 10, 0.5);
    border-radius: 5px;
-   padding: 6%;
+   padding: 4%;
    color: white;
    font-size: x-large;
  }
