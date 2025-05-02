@@ -9,11 +9,11 @@ function Login() {
                 <img src={bank} alt="" />
                 <form className="login" >
                     <h4>Welcome to our Log in page</h4>
-                    <input className="" type="text" placeholder="user name" />
+                    <input name="username" className="" type="text" placeholder="user name" />
                     <br />
-                    <input className="" type="password" placeholder="password" />
+                    <input name="password" className="" type="password" placeholder="password" />
                     <br />
-                    <button className="" type="submit">Log in</button>
+                    <button  className="" type="submit">Log in</button>
                     <br />
                     <div className="forget">
                         <Link>Forget Password?</Link>
