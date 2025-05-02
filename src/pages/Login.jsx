@@ -1,19 +1,39 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import bank from "../assets/images/bank.png";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { loginUser } from "../redux/slice/LoginSlice";
 
 function Login() {
+
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const dispatch = useDispatch();
+    const { loading, error, isAuthenticated } = useSelector((state) => state.user);
+    const navigate = useNavigate();
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const credentials = { email, password };
+        dispatch(loginUser(credentials));
+    };
+
+    if(isAuthenticated){
+        navigate("/dashboard");
+    }
 
     return (
         <>
             <div className="login-page">
                 <img src={bank} alt="" />
-                <form className="login" >
+                <form className="login" onSubmit={handleSubmit}>
                     <h4>Welcome to our Log in page</h4>
-                    <input name="username" className="" type="text" placeholder="user name" />
+                    <input name="email" className="" type="text" placeholder="E-mail" onChange={(e) => setEmail(e.target.value)} />
                     <br />
-                    <input name="password" className="" type="password" placeholder="password" />
+                    <input name="password" className="" type="password" placeholder="password" onChange={(e) => setPassword(e.target.value)} />
                     <br />
-                    <button  className="" type="submit">Log in</button>
+                    <button className="" type="submit">Log in</button>
                     <br />
                     <div className="forget">
                         <Link>Forget Password?</Link>

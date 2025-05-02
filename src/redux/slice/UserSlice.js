@@ -1,14 +1,15 @@
-import { createSlice, createAsyncThunk, isAction } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 
 const VITE_BASE_URL = "http://127.0.0.1:4001/api/v1";
 
+//signup
 export const signupUser = createAsyncThunk(
     "user/signupUser",
     async (userData, { rejectWithValue }) => {
         try {
-            const response = await axios.post(`${VITE_BASE_URL}/users`, userData);
+            const response = await axios.post(`${VITE_BASE_URL}/auth/register`, userData);
             return response.data;
         }
         catch (error) {
@@ -16,6 +17,7 @@ export const signupUser = createAsyncThunk(
         }
     }
 );
+
 
 const userSlice = createSlice({
     name: "user",
@@ -27,6 +29,7 @@ const userSlice = createSlice({
     reducers: {},
     extraReducers: (builder)=>{
         builder
+        //sign up
         .addCase(signupUser.pending, (state)=>{
             state.loading=true;
             state.error=null;
@@ -39,6 +42,8 @@ const userSlice = createSlice({
             state.loading=false;
             state.error = action.payload;
         });
+
+        
     },
 });
 

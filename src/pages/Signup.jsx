@@ -2,25 +2,31 @@ import { Link } from "react-router-dom";
 import bank from "../assets/images/bank.png";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {signupUser} from "../redux/slice/UserSlice"
-import axios from "axios";
+import { signupUser } from "../redux/slice/UserSlice"
 
 function Signup() {
     const [lastName, setLastName] = useState("");
     const [firstName, setFirstName] = useState("");
-    const [middleName, setMiddleName] = useState("");
-    const [userName, setUserName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
 
     const dispatch = useDispatch();
     const { loading, error } = useSelector((state) => state.user);
 
-    const handleSumbit = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        const userData = { lastName, firstName, middleName, userName, email, phone, password, confirmPassword };
+
+        if (password !== confirmPassword) {
+            setErrorMessage("passwords do not match");
+            return;
+        }
+        else {
+            setErrorMessage("");
+        }
+        const userData = { firstName, lastName, phone, email, password };
         dispatch(signupUser(userData));
     };
 
@@ -28,25 +34,21 @@ function Signup() {
         <>
             <div className="signup-page">
                 <img src={bank} alt="" />
-                <form className="signup" onSubmit={handleSumbit}>
+                <form className="signup" onSubmit={handleSubmit}>
                     <h4>Register a new account with us</h4>
-                    <input name="lastName" className="" type="text" placeholder="last name" onChange={(e) => setLastName(e.target.value)} />
+                    <input name="firstName" className="" type="text" placeholder="first name" onChange={(e) => setFirstName(e.target.value)} value={firstName}/>
                     <br />
-                    <input name="firstName" className="" type="text" placeholder="first name" onChange={(e) => setFirstName(e.target.value)} />
+                    <input name="lastName" className="" type="text" placeholder="last name" onChange={(e) => setLastName(e.target.value)} value={lastName}/>
                     <br />
-                    <input name="middleName" className="" type="text" placeholder="middle name" onChange={(e) => setMiddleName(e.target.value)} />
+                    <input name="phone" className="" type="tel" placeholder="phone no" onChange={(e) => setPhone(e.target.value)} value={phone}/>
                     <br />
-                    <input name="email" className="" type="text" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
+                    <input name="email" className="" type="text" placeholder="Email" onChange={(e) => setEmail(e.target.value)} value={email}/>
                     <br />
-                    <input name="phone" className="" type="tel" placeholder="phone no" onChange={(e) => setPhone(e.target.value)} />
-                    <br />
-                    <input name="username" className="" type="text" placeholder="pick user name" onChange={(e) => setUserName(e.target.value)} />
-                    <br />
-                    <input name="password" className="" type="password" placeholder="new password" onChange={(e) => setPassword(e.target.value)} />
+                    <input name="password" className="" type="password" placeholder="new password" onChange={(e) => setPassword(e.target.value)} value={password}/>
                     <br />
                     <input name="confirmPassword" className="" type="password" placeholder="confirm password" onChange={(e) => setConfirmPassword(e.target.value)} />
                     <br />
-                    <button className="">Sign Up</button>
+                    <button className="" type="submit">Sign Up</button>
                     <br />
                     <div className="already">
                         <p>Already have an account? <Link to="/">Log in</Link></p>
