@@ -1,9 +1,15 @@
 import Placeholder from "../../assets/images/placeholder.jpg";
-import { useSelector } from "react-redux";
-import { loginUser } from "../../redux/slice/LoginSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchUserData } from "../../redux/slice/DataSlice";
+import { useEffect } from "react";
 
 function Header() {
-    const { user } = useSelector((state) => state.login);
+    const dispatch = useDispatch();
+    const { user } = useSelector((state) => state.data);
+
+    useEffect(() => {
+        dispatch(fetchUserData(user.data._id));
+    }, [dispatch]);
 
     return (
         <header className="title">
@@ -12,9 +18,10 @@ function Header() {
                 <button> <i className="fa-solid fa-search"></i> </button>
                 <button> <i className="fa-solid fa-bell"></i></button>
                 <div className="user">
-                    <img src={user?.image || Placeholder} alt="User" />
-                    <span>{`${user?.lastName} , ${user?.firstName}`}</span>
+                    <img src={user?.data.image || Placeholder} alt="User" />
+                    <span>{`${user?.data.lastName} , ${user?.data.firstName} `}</span>
                 </div>
+                <span className="accNum">{`Account: ${user?.data.accountNumber}`}</span>
             </div>
         </header>
     );

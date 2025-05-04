@@ -8,6 +8,7 @@ import Welcome from "../components/homeComponent/Welcome.jsx";
 import Schedule from "../components/homeComponent/Schedule.jsx";
 
 function Home() {
+    
     return (
         <>
             <div className="face">

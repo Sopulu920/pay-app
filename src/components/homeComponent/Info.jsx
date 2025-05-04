@@ -1,5 +1,15 @@
+import { useSelector, useDispatch } from "react-redux";
+import { fetchUserData } from "../../redux/slice/DataSlice";
+import { useEffect } from "react";
+
 function Info() {
-    const amount = Math.floor(Math.random() * 1000);
+    const dispatch = useDispatch();
+    const { user } = useSelector((state) => state.data);
+
+    useEffect(() => {
+        dispatch(fetchUserData(user.data._id));
+    }, [dispatch]);
+
     const amount2 = Math.floor(Math.random() * 10000);
     const amount3 = Math.floor(Math.random() * 10000);
 
@@ -12,7 +22,7 @@ function Info() {
                         <p className="info-text">Wallet Balance</p>
                         <div className="info-amount">
                             <i className="fa-solid fa-naira-sign"></i>
-                            <span>{amount3}</span>
+                            <span>{user.data.accountBalance}</span>
                         </div>
                     </div>
                 </div>
@@ -29,7 +39,7 @@ function Info() {
                     <div className="info-amount">
                         <p className="info-text2"> spent </p>
                         <i className="fa-solid fa-naira-sign"></i>
-                        <span>{amount}</span>
+                        <span>{amount3}</span>
                     </div>
                 </div>
             </div>

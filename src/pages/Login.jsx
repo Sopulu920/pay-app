@@ -24,9 +24,9 @@ function Login() {
     useEffect(() => {
         console.log("isAuthenticated:", isAuthenticated);
         if (isAuthenticated === true) {
-            console.log("Navigating to /dashboard");
             console.log("User data:", user);
             if (user && user.data && user.data._id) {
+                console.log("Fetched user ID:", user.data._id);
                 dispatch(fetchUserData(user.data._id));
             }
             navigate("/dashboard");
