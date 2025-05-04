@@ -1,11 +1,11 @@
-import { user } from "./Header";
+
 
 function Welcome() {
     return (
         <>
             <div className="welcome">
                 <div className="welcome-back">
-                    welcome back, {user.firstName}!
+                    welcome back, 
                 </div>
                 <div className="welcome-button">
                     <button className="welcome-receive">receive</button>

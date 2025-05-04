@@ -1,8 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
 import bank from "../assets/images/bank.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../redux/slice/LoginSlice";
+import { fetchUserData } from "../redux/slice/DataSlice";
 
 function Login() {
 
@@ -10,18 +11,27 @@ function Login() {
     const [password, setPassword] = useState("");
 
     const dispatch = useDispatch();
-    const { loading, error, isAuthenticated } = useSelector((state) => state.user);
+    const { loading, error, isAuthenticated, user } = useSelector((state) => state.login);
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const credentials = { email, password };
+        console.log("Dispatching loginUser with credentials:", credentials);
         dispatch(loginUser(credentials));
     };
 
-    if(isAuthenticated){
-        navigate("/dashboard");
-    }
+    useEffect(() => {
+        console.log("isAuthenticated:", isAuthenticated);
+        if (isAuthenticated === true) {
+            console.log("Navigating to /dashboard");
+            console.log("User data:", user);
+            if (user && user.data && user.data._id) {
+                dispatch(fetchUserData(user.data._id));
+            }
+            navigate("/dashboard");
+        }
+    }, [isAuthenticated, navigate, user, dispatch]);
 
     return (
         <>

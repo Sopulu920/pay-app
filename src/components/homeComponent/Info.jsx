@@ -11,7 +11,7 @@ function Info() {
                     <div>
                         <p className="info-text">Wallet Balance</p>
                         <div className="info-amount">
-                            <i class="fa-solid fa-naira-sign"></i>
+                            <i className="fa-solid fa-naira-sign"></i>
                             <span>{amount3}</span>
                         </div>
                     </div>
@@ -20,7 +20,7 @@ function Info() {
                     <i className="income fa-solid fa-history"></i>
                     <div className="info-amount">
                         <p className="info-text2"> income </p>
-                        <i class="fa-solid fa-naira-sign"></i>
+                        <i className="fa-solid fa-naira-sign"></i>
                         <span>{amount2}</span>
                     </div>
                 </div>
@@ -28,7 +28,7 @@ function Info() {
                     <i className="expense fa-solid fa-history"></i>
                     <div className="info-amount">
                         <p className="info-text2"> spent </p>
-                        <i class="fa-solid fa-naira-sign"></i>
+                        <i className="fa-solid fa-naira-sign"></i>
                         <span>{amount}</span>
                     </div>
                 </div>

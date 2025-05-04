@@ -4,7 +4,7 @@ function LeftHand() {
     return (
         <div className="left">
             <div className="pay">
-                <i class="fa-solid fa-building-columns"></i>
+                <i className="fa-solid fa-building-columns"></i>
                 <span>pay</span>
             </div>
             <Link className={`page icon ${location.pathname === "/dashboard" ? "active" : ""}`} to="/dashboard" ><i className="fa-solid fa-home"></i> home</Link> <br />
