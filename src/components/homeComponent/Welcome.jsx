@@ -9,7 +9,7 @@ function Welcome() {
 
     useEffect(() => {
         dispatch(fetchUserData(user.data._id));
-    }, [dispatch]);
+    }, [dispatch, user]);
 
     return (
         <>

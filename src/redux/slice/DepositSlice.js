@@ -39,7 +39,7 @@ const depositSlice = createSlice({
       })
       .addCase(deposit.rejected, (state, action) => {
         state.loading = false;
-        state.error = action.payload || "Failed to deposit funds";
+        state.error = action.payload;
       });
   },
 });
