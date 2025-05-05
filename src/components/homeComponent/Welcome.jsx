@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { fetchUserData } from "../../redux/slice/DataSlice";
 import { useEffect } from "react";
-import { data } from "react-router-dom";
+
 
 function Welcome() {
     const dispatch = useDispatch();

@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import bank from "../assets/images/bank.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { signupUser } from "../redux/slice/UserSlice"
 
@@ -14,7 +14,7 @@ function Signup() {
     const [errorMessage, setErrorMessage] = useState("");
 
     const dispatch = useDispatch();
-    const { loading, error } = useSelector((state) => state.user);
+    const { loading, error, success } = useSelector((state) => state.user);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -30,21 +30,31 @@ function Signup() {
         dispatch(signupUser(userData));
     };
 
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (success === true) {
+            navigate("/")
+        }
+
+    },
+        [success, navigate, dispatch]
+    )
     return (
         <>
             <div className="signup-page">
                 <img src={bank} alt="" />
                 <form className="signup" onSubmit={handleSubmit}>
                     <h4>Register a new account with us</h4>
-                    <input name="firstName" className="" type="text" placeholder="first name" onChange={(e) => setFirstName(e.target.value)} value={firstName}/>
+                    <input name="firstName" className="" type="text" placeholder="first name" onChange={(e) => setFirstName(e.target.value)} value={firstName} />
                     <br />
-                    <input name="lastName" className="" type="text" placeholder="last name" onChange={(e) => setLastName(e.target.value)} value={lastName}/>
+                    <input name="lastName" className="" type="text" placeholder="last name" onChange={(e) => setLastName(e.target.value)} value={lastName} />
                     <br />
-                    <input name="phone" className="" type="tel" placeholder="phone no" onChange={(e) => setPhone(e.target.value)} value={phone}/>
+                    <input name="phone" className="" type="tel" placeholder="phone no" onChange={(e) => setPhone(e.target.value)} value={phone} />
                     <br />
-                    <input name="email" className="" type="text" placeholder="Email" onChange={(e) => setEmail(e.target.value)} value={email}/>
+                    <input name="email" className="" type="text" placeholder="Email" onChange={(e) => setEmail(e.target.value)} value={email} />
                     <br />
-                    <input name="password" className="" type="password" placeholder="new password" onChange={(e) => setPassword(e.target.value)} value={password}/>
+                    <input name="password" className="" type="password" placeholder="new password" onChange={(e) => setPassword(e.target.value)} value={password} />
                     <br />
                     <input name="confirmPassword" className="" type="password" placeholder="confirm password" onChange={(e) => setConfirmPassword(e.target.value)} />
                     <br />

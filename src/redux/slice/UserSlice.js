@@ -25,25 +25,29 @@ const userSlice = createSlice({
         user: null,
         loading: false,
         error: null,
+        success: false,
     },
     reducers: {},
-    extraReducers: (builder)=>{
+    extraReducers: (builder) => {
         builder
-        //sign up
-        .addCase(signupUser.pending, (state)=>{
-            state.loading=true;
-            state.error=null;
-        })
-        .addCase(signupUser.fulfilled, (state, action)=>{
-            state.loading=false;
-            state.user=action.payload;
-        })
-        .addCase(signupUser.rejected, (state,action)=>{
-            state.loading=false;
-            state.error = action.payload;
-        });
+            //sign up
+            .addCase(signupUser.pending, (state) => {
+                state.loading = true;
+                state.error = null;
+                state.success = false;
+            })
+            .addCase(signupUser.fulfilled, (state, action) => {
+                state.loading = false;
+                state.user = action.payload;
+                state.success = true;
+            })
+            .addCase(signupUser.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.payload;
+                state.success = false;
+            });
 
-        
+
     },
 });
 
