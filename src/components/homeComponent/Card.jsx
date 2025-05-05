@@ -6,8 +6,6 @@ import WithdrawalModal from "./WithdrawalModal";
 import TransferModal from "./TransferModal";
 import DepositModal from "./DepositModal";
 
-const totalBalance = Math.floor(Math.random() * 1000); //generate random numbers for total
-
 function cardNumber() {
     return Array.from({ length: 16 }, () => Math.floor(Math.random() * 10)).join(""); //generate random numbers for card number
 }
