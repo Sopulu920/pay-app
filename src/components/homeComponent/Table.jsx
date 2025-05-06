@@ -1,51 +1,27 @@
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { getUserId } from "../../redux/slice/LoginSlice";
+import { fetchTransactions } from "../../redux/slice/transactionSlice";
 
-// months of the year
-const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-//data fro chart
-const chartData = [
-    {
-        date: `${(new Date().getDate())}  ${monthNames[new Date().getMonth()]}`,
-        description: "food",
-        statues: true,
-        amount: 2000,
-    },
-    {
-        date: `${(new Date().getDate())}  ${monthNames[new Date().getMonth()]}`,
-        description: "food",
-        statues: true,
-        amount: 2000,
-    },
-    {
-        date: `${(new Date().getDate())}  ${monthNames[new Date().getMonth()]}`,
-        description: "food",
-        statues: true,
-        amount: 2000,
-    },
-    {
-        date: `${(new Date().getDate())}  ${monthNames[new Date().getMonth()]}`,
-        description: "food",
-        statues: true,
-        amount: 2000,
-    },
-    {
-        date: `${(new Date().getDate())}  ${monthNames[new Date().getMonth()]}`,
-        description: "food",
-        statues: true,
-        amount: 2000,
-    },
-    {
-        date: `${(new Date().getDate())}  ${monthNames[new Date().getMonth()]}`,
-        description: "food",
-        statues: true,
-        amount: 2000,
-    },
-];
-
-
-const reversedChartData = [...chartData].reverse();
 
 function Table() {
+    const user = useSelector(getUserId);    
+    const dispatch = useDispatch();
+
+    const transactionsState = useSelector((state) => state.transactions);
+    const { loading, error, transactions } = transactionsState;
+    console.log(transactionsState);
+    const transaction = transactionsState.transactions.data;
+    console.log(transaction)
+
+    useEffect(() => {
+        if (user && user._id) {
+            dispatch(fetchTransactions(user._id));
+        }
+        
+    }, [dispatch, user]);
+
     return (
         <>
             <div className="table-container">
@@ -58,7 +34,7 @@ function Table() {
                         <tr className="table-head">
                             <th>date</th>
                             <th>description</th>
-                            <th>statues</th>
+                            <th>status</th>
                             <th>amount</th>
                         </tr>
                     </thead>
@@ -66,12 +42,13 @@ function Table() {
                 <div className="tbody-container">
                     <table className="table">
                         <tbody className="tbody">
-                            {reversedChartData.map((data, index) => (
+                            
+                            {transaction.map((data, index) => (
                                 <tr className="table-body" key={index}>
-                                    <td>{data.date}</td>
-                                    <td>{data.description}</td>
-                                    <td>{data.statues ? "successful" : "failed"}</td>
-                                    <td><i className="fa-solid fa-naira-sign"></i>{data.amount}</td>
+                                    <td>{data.date ? new Date(data.date).toLocaleDateString() : "N/A"}</td>
+                                    <td>{data.transactionType || "N/A"}</td>
+                                    <td>{(data.status || data.statues) ? "successful" : "failed"}</td>
+                                    <td><i className="fa-solid fa-naira-sign"></i>{data.amount || 0}</td>
                                 </tr>
                             ))}
                         </tbody>
