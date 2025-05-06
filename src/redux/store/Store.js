@@ -3,6 +3,7 @@ import userReducer from "../slice/UserSlice";
 import loginReducer from "../slice/LoginSlice";
 import depositReducer  from "../slice/DepositSlice";
 import withdrawReducer from "../slice/Withdrawal";
+import transferReducer from "../slice/TransferSlice";
 
 export const store = configureStore({
     reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
        login: loginReducer,
        deposit: depositReducer,
        withdraw: withdrawReducer,
+       transfer: transferReducer,
     },
 });
 

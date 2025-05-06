@@ -12,7 +12,8 @@ export const deposit = createAsyncThunk(
     } catch (error) {
       if (error.response && error.response.data) {
         return rejectWithValue(error.response.data);
-      } else {
+      }
+      else {
         return rejectWithValue(error.message);
       }
     }
