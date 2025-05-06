@@ -444,7 +444,7 @@ body {
 
 .info-amount {
   margin: 0%;
-  font-size: large;
+  font-size: medium;
   font-weight: bold;
   padding: 5%;
 }
@@ -694,8 +694,8 @@ body {
   border: none;
   background-color: red;
   width: 5%;
-  position: absolute;
-  top: 26.2%;
+  position: fixed;
+  top: 26%;
 }
 
 .transfer-close-btn {

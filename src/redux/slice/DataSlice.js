@@ -31,6 +31,7 @@ const DataSlice = createSlice({
             .addCase(fetchUserData.fulfilled, (state, action) => {
                 state.status = "succeeded";
                 state.user = action.payload;
+                console.log("fetchUserData fulfilled with result:", action.payload);
             })
             .addCase(fetchUserData.rejected, (state, action) => {
                 state.status = "failed";

@@ -1,21 +1,14 @@
-import { useSelector, useDispatch } from "react-redux";
-import { fetchUserData } from "../../redux/slice/DataSlice";
-import { useEffect } from "react";
-
+import { useSelector } from "react-redux";
+import { getUserId } from "../../redux/slice/LoginSlice";
 
 function Welcome() {
-    const dispatch = useDispatch();
-    const { user } = useSelector((state) => state.data);
-
-    useEffect(() => {
-        dispatch(fetchUserData(user.data._id));
-    }, [dispatch, user]);
-
+    const user = useSelector(getUserId);
+   
     return (
         <>
             <div className="welcome">
                 <div className="welcome-back">
-                welcome back, {user.data.firstName}!
+                welcome back, {user?.firstName}!
                 </div>
                 <div className="welcome-button">
                     <button className="welcome-receive">receive</button>

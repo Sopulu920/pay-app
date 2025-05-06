@@ -3,7 +3,7 @@ import bank from "../assets/images/bank.png";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../redux/slice/LoginSlice";
-import { fetchUserData } from "../redux/slice/DataSlice";
+
 
 function Login() {
 
@@ -12,6 +12,7 @@ function Login() {
 
     const dispatch = useDispatch();
     const { loading, error, isAuthenticated, user } = useSelector((state) => state.login);
+
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
@@ -22,16 +23,12 @@ function Login() {
     };
 
     useEffect(() => {
-        console.log("isAuthenticated:", isAuthenticated);
+        console.log("isAuthenticated is ", isAuthenticated);
+        console.log("Logged user ", user);
         if (isAuthenticated === true) {
-            console.log("User data:", user);
-            if (user && user.data && user.data._id) {
-                console.log("Fetched user ID:", user.data._id);
-                dispatch(fetchUserData(user.data._id));
-            }
             navigate("/dashboard");
         }
-    }, [isAuthenticated, navigate, user, dispatch]);
+    }, [isAuthenticated, navigate, dispatch, user]);
 
     return (
         <>

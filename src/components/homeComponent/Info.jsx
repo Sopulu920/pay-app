@@ -1,14 +1,8 @@
-import { useSelector, useDispatch } from "react-redux";
-import { fetchUserData } from "../../redux/slice/DataSlice";
-import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { getUserId } from "../../redux/slice/LoginSlice";
 
 function Info() {
-    const dispatch = useDispatch();
-    const { user } = useSelector((state) => state.data);
-
-    useEffect(() => {
-        dispatch(fetchUserData(user.data._id));
-    }, [dispatch]);
+   const user = useSelector(getUserId);
 
     const amount2 = Math.floor(Math.random() * 10000);
     const amount3 = Math.floor(Math.random() * 10000);
@@ -22,7 +16,7 @@ function Info() {
                         <p className="info-text">Wallet Balance</p>
                         <div className="info-amount">
                             <i className="fa-solid fa-naira-sign"></i>
-                            <span>{user.data.accountBalance}</span>
+                            <span>{user?.accountBalance}</span>
                         </div>
                     </div>
                 </div>

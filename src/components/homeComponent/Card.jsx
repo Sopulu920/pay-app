@@ -1,7 +1,7 @@
 import Mastercard from "../../assets/images/mastercard.jpg";
-import { useEffect,useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchUserData } from "../../redux/slice/DataSlice";
+import { useState } from "react";
+import { useSelector } from "react-redux";
+import { getUserId } from "../../redux/slice/LoginSlice";
 import WithdrawalModal from "./WithdrawalModal";
 import TransferModal from "./TransferModal";
 import DepositModal from "./DepositModal";
@@ -12,14 +12,7 @@ function cardNumber() {
 const number = cardNumber(); //to call random number for card
 
 function Card() {
-    const { user } = useSelector((state) => state.data);
-     const dispatch = useDispatch();
-
-     useEffect(() => {
-        if (user && user.data && user.data._id) {
-            dispatch(fetchUserData(user.data._id));
-        }
-    }, [dispatch, user]);
+    
 
     const [withdrawalModal, setWithdrawalModal] = useState(false); //to track state
     const [transferModal, setTransferModal] = useState(false); //to track state
@@ -34,6 +27,8 @@ function Card() {
     const toggleDepositModal = () => {
         setDepositModal(!depositModal)
     }
+
+    const user = useSelector(getUserId);
     return (
         <>
             <div className="card-container">
@@ -46,7 +41,7 @@ function Card() {
                             </div>
                             <div>
                                 <i className="fa-solid fa-naira-sign"></i>
-                                <span>{user.data.accountBalance}</span>
+                                <span>{user?.accountBalance}</span>
                             </div>
                         </div>
                         <div className="master-card">

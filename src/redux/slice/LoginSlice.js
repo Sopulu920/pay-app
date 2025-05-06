@@ -25,7 +25,11 @@ const loginSlice = createSlice({
         error: null,
         isAuthenticated: false,
     },
-    reducers: {},
+    reducers: {
+        updateUser: (state, action) => {
+            state.user = action.payload;
+        },
+    },
     extraReducers: (builder) => {
         builder
             .addCase(loginUser.pending, (state) => {
@@ -45,5 +49,8 @@ const loginSlice = createSlice({
     },
 });
 
+export const { updateUser } = loginSlice.actions;
+
+export const getUserId = (state) => state.login.user?.data;
 
 export default loginSlice.reducer;

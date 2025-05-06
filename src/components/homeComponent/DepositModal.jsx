@@ -1,25 +1,28 @@
 import { useSelector, useDispatch } from "react-redux";
-import { fetchUserData } from "../../redux/slice/DataSlice";
 import { deposit } from "../../redux/slice/DepositSlice";
 import { useEffect, useState } from "react";
+import { getUserId, updateUser } from "../../redux/slice/LoginSlice";
 
 function DepositModal({ toggleDepositModal }) {
-    const dispatch = useDispatch();
-    const { user } = useSelector((state) => state.data);
-    const [amount, setAmount] = useState("");
 
-    useEffect(() => {
-        if (user && user.data && user.data._id) {
-            dispatch(fetchUserData(user.data._id));
-        }
-    }, [dispatch, user]);
+    const [amount, setAmount] = useState("");
+    const dispatch = useDispatch();
+    const user = useSelector(getUserId);
+    const depositState = useSelector((state) => state.deposit);
 
     const handleDeposit = () => {
         if (!amount || isNaN(amount) || Number(amount) <= 0) {
             alert("Please enter a valid deposit amount.");
             return;
         }
-        dispatch(deposit({ userId: user.data._id, amount: Number(amount) }));
+
+        dispatch(deposit({ userId: user._id, amount: Number(amount) })).then((action) => {
+            console.log("Deposit action payload:", action.payload);
+            if (action.type === "user/deposit/fulfilled") {
+                dispatch(updateUser(action.payload));
+                toggleDepositModal();
+            }
+        });
     };
 
     return (
@@ -31,7 +34,7 @@ function DepositModal({ toggleDepositModal }) {
                     </div>
                     <div className="modal-content">
                         <h1>deposit</h1>
-                        <p>Account Number: {user.data.accountNumber}</p>
+                        <p>Account Number: {user?.accountNumber}</p>
                         <div>
                             <i className="fa fa-naira-sign"></i>
                             <input
@@ -43,12 +46,7 @@ function DepositModal({ toggleDepositModal }) {
                                 onChange={(e) => setAmount(e.target.value)}
                             />
                         </div>
-                        <div>
-                            
-                        </div>
-                        {deposit.loading && <p>Processing deposit...</p>}
-                        {deposit.error && <p style={{ color: "red" }}>Error: {depositState.error}</p>}
-                        {deposit.user && <p style={{ color: "green" }}>Deposit successful!</p>}
+
                     </div>
                     <br />
                     <button className="modal-btn" onClick={handleDeposit}>deposit</button>
