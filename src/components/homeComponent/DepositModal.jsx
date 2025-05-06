@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { deposit } from "../../redux/slice/DepositSlice";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { getUserId, updateUser } from "../../redux/slice/LoginSlice";
 
 function DepositModal({ toggleDepositModal }) {
@@ -8,7 +8,6 @@ function DepositModal({ toggleDepositModal }) {
     const [amount, setAmount] = useState("");
     const dispatch = useDispatch();
     const user = useSelector(getUserId);
-    const depositState = useSelector((state) => state.deposit);
 
     const handleDeposit = () => {
         if (!amount || isNaN(amount) || Number(amount) <= 0) {

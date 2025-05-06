@@ -1,8 +1,29 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { getUserId, updateUser } from "../../redux/slice/LoginSlice";
+import { withdraw } from "../../redux/slice/Withdrawal";
 
 function WithdrawalModal({ toggleWithdrawalModal }) {
+
+    const [amount, setAmount] = useState("");
+    const dispatch = useDispatch();
+    const user = useSelector(getUserId);
+
+    const handleWithdrawal = () => {
+            if (!amount || isNaN(amount) || Number(amount) <= 0) {
+                alert("Please enter a valid withdrawal amount.");
+                return;
+            }
     
+            dispatch(withdraw({ userId: user._id, amount: Number(amount) })).then((action) => {
+                console.log("Withdrawal action payload:", action.payload);
+                if (action.type === "user/withdraw/fulfilled") {
+                    dispatch(updateUser(action.payload));
+                    toggleWithdrawalModal();
+                }
+            });
+        };   
+
 
     return (
         <>
@@ -13,7 +34,7 @@ function WithdrawalModal({ toggleWithdrawalModal }) {
                     </div>
                     <div className="modal-content">
                         <h1>withdrawal</h1>
-                        {/* <p>Account Number: {user.data.accountNumber}</p> */}
+                        <p>Account Number: {user?.accountNumber}</p>
                         <div>
                             <i className="fa fa-naira-sign"></i>
                             <input
@@ -21,11 +42,13 @@ function WithdrawalModal({ toggleWithdrawalModal }) {
                                 placeholder="amount"
                                 min="0"
                                 step="0.01"
+                                value={amount}
+                                onChange={(e) => setAmount(e.target.value)}
                             />
                         </div>
                     </div>
                     <br />
-                    <button className="modal-btn">withdrawal</button>
+                    <button className="modal-btn" onClick={handleWithdrawal}>withdrawal</button>
                 </div>
             </div>
         </>

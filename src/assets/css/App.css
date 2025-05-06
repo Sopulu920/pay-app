@@ -708,6 +708,6 @@ body {
   border: none;
   background-color: red;
   width: 5%;
-  position: absolute;
-  top: 26%;
+  position: fixed;
+  top: 25.5%;
 }

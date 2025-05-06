@@ -1,15 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
-import userReducer from "../slice/UserSlice"
-import loginReducer from "../slice/LoginSlice"
-import dataReducer from "../slice/DataSlice"
+import userReducer from "../slice/UserSlice";
+import loginReducer from "../slice/LoginSlice";
 import depositReducer  from "../slice/DepositSlice";
+import withdrawReducer from "../slice/Withdrawal";
 
 export const store = configureStore({
     reducer: {
        user: userReducer,
        login: loginReducer,
-       data: dataReducer,
        deposit: depositReducer,
+       withdraw: withdrawReducer,
     },
 });
 
