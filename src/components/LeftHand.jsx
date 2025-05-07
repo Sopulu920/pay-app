@@ -8,7 +8,7 @@ function LeftHand() {
                 <span>pay</span>
             </div>
             <Link className={`page icon ${location.pathname === "/dashboard" ? "active" : ""}`} to="/dashboard" ><i className="fa-solid fa-home"></i> home</Link> <br />
-            <Link className={`page icon ${location.pathname === "/history" ? "active" : ""}`} to="/history"><i className="fa-solid fa-history"></i> history</Link>  <br />
+            <Link className={`page icon ${location.pathname === "/history" || location.pathname === "/allTransaction" || location.pathname === "/receive" || location.pathname === "/send" ? "active" : ""}`} to="/history"><i className="fa-solid fa-history"></i> history</Link>  <br />
             <Link className={`page icon ${location.pathname === "/transfer" ? "active" : ""}`} to="/transfer"><i className="fa-solid fa-right-left"></i> transfer</Link> <br />
             <Link className={`page icon ${location.pathname === "/airtimeData" ? "active" : ""}`} to="/airtimeData"><i className="fa-solid fa-mobile"></i> mobile</Link> <br />
             <Link className={`page icon ${location.pathname === "/settings" ? "active" : ""}`} to="/settings"><i className="fa-solid fa-gear"></i> settings</Link> <br />

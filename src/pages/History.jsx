@@ -1,6 +1,6 @@
 import LeftHand from "../components/LeftHand.jsx";
 import HeaderHistory from "../components/historyComponent/HeaderHistory.jsx";
-import { Link } from "react-router-dom";
+import TransferType from "../components/historyComponent/TransferTypes.jsx";
 import Footer from "../components/Footer.jsx";
 
 function History() {
@@ -10,13 +10,8 @@ function History() {
         <LeftHand />
         <div className="body">
           <HeaderHistory />
-          <div className="notes">
-            <Link to="/allTransaction" className="page">All Transactions</Link>
-            <Link to="/receive" className="page">Receive</Link>
-            <Link to="/send" className="page">Send</Link>
-          </div>
+          <TransferType />
         </div>
-        <Footer />
       </div>
     </>
   );
