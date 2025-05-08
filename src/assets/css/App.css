@@ -782,3 +782,25 @@ body {
 .settings-delete-btn {
   color: red;
 }
+
+.profile-container{
+  border: solid 1px gainsboro;
+  border-top: none;
+  border-radius: 15px;
+  margin-bottom: 1%;
+  margin-top: -3%;
+}
+
+.profile-data{
+  font-size: larger;
+  font-weight: bolder;
+  text-transform: capitalize;
+  padding: 2%;
+}
+
+.profile-data span{
+  font-size: larger;
+  font-weight: normal;
+  text-transform: capitalize;
+  padding: 2%;
+}
