@@ -1,5 +1,5 @@
 body {
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 /* left hand side */
@@ -809,3 +809,38 @@ body {
   color: red;
   text-align: center;
 }
+
+/* laptops and tablet - 1024px and below */
+@media (max-width: 1024px) {
+  .signup-page img {
+    display: none;
+  }
+
+  .signup {
+    position: absolute;
+    top: 10%;
+    left: 30%;
+  }
+
+  .login-page img {
+    display: none;
+  }
+
+  .login {
+    position: absolute;
+    top: 10%;
+    left: 30%;
+  }
+}
+
+/* mobile - 768px and below */
+@media (max-width: 768px) {}
+
+/* mobile - 600px and below */
+@media (max-width: 600px) {}
+
+/* Phones - 480px and below */
+@media (max-width: 480px) {}
+
+/* Small phones - 320px and below */
+@media (max-width: 320px) {}
