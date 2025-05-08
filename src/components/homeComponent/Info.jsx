@@ -2,10 +2,19 @@ import { useSelector } from "react-redux";
 import { getUserId } from "../../redux/slice/LoginSlice";
 
 function Info() {
-   const user = useSelector(getUserId);
+    const user = useSelector(getUserId);
 
-    const amount2 = Math.floor(Math.random() * 10000);
-    const amount3 = Math.floor(Math.random() * 10000);
+    const transactionsState = useSelector((state) => state.transactions);
+    const { loading, error, transactions } = transactionsState;
+    const transaction = transactionsState.transactions.data || [];
+
+    const totalIncome = transaction.reduce((sum, data) => {
+        return data.transactionType === "credit" ? sum + data.amount : sum;
+    }, 0);
+
+    const totalExpenses = transaction.reduce((sum, data) => {
+        return data.transactionType === "debit" ? sum + data.amount : sum;
+    }, 0);
 
     return (
         <>
@@ -25,7 +34,7 @@ function Info() {
                     <div className="info-amount">
                         <p className="info-text2"> income </p>
                         <i className="fa-solid fa-naira-sign"></i>
-                        <span>{amount2}</span>
+                        <span>{totalIncome}</span>
                     </div>
                 </div>
                 <div className="income-expense">
@@ -33,7 +42,7 @@ function Info() {
                     <div className="info-amount">
                         <p className="info-text2"> spent </p>
                         <i className="fa-solid fa-naira-sign"></i>
-                        <span>{amount3}</span>
+                        <span>{totalExpenses}</span>
                     </div>
                 </div>
             </div>
