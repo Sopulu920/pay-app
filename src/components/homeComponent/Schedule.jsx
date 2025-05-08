@@ -15,7 +15,7 @@ function Schedule() {
             <div className="schedule-container">
                 <div className="schedule-transfer">
                     <p>Schedule transfer</p>
-                    <Link className="recent-view">view all <i className="fa-solid fa-greater-than"></i> </Link>
+                    <Link className="recent-view" to={"/allTransaction"}>view all <i className="fa-solid fa-greater-than"></i> </Link>
                 </div>
                 {individuals.map((data, index) => (
                     <div className="individual" key={index}>

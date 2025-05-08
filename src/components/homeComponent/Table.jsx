@@ -27,7 +27,7 @@ function Table() {
             <div className="table-container">
                 <div className="recent">
                     <h5>recent transaction</h5>
-                    <Link className="recent-view">view all <i className="fa-solid fa-greater-than"></i> </Link>
+                    <Link className="recent-view" to={"/allTransaction"}>view all <i className="fa-solid fa-greater-than"></i> </Link>
                 </div>
 
                 <table className="table">

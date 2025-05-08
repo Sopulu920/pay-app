@@ -1,18 +1,20 @@
 function BodySettings() {
     return (
         <>
-            <button className="text-start p-3 m-3 fs-5 border rounded">
-                Personal Profile
-            </button>
-            <button className="text-start p-3 m-3 fs-5 border rounded">
-                Dark Mode
-            </button>
-            <button className="text-start p-3 m-3 fs-5 border rounded">
-                Log Out
-            </button>
-            <button className="text-start text-danger p-3 m-3 fs-5 border rounded">
-                Delete Account
-            </button>
+            <div className="settings-body">
+                <button className="settings-btn">
+                    Personal Profile
+                </button>
+                <button className="settings-btn">
+                    Dark Mode
+                </button>
+                <button className="settings-btn">
+                    Log Out
+                </button>
+                <button className="settings-delete-btn">
+                    Delete Account
+                </button>
+            </div>
         </>
     );
 }

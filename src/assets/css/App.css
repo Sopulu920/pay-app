@@ -186,12 +186,6 @@ body {
   align-items: center;
 }
 
-.footer-home {
-  position: absolute;
-  bottom: 0%;
-  left: 50%;
-}
-
 .page {
   text-decoration: none;
   color: white;
@@ -726,9 +720,9 @@ body {
 .history-table td {
   padding: 0;
   margin: 0;
-  width: 25%; 
+  width: 25%;
   text-align: center;
-  border: 1px solid gainsboro; 
+  border: 1px solid gainsboro;
 }
 
 .history-table-head {
@@ -767,4 +761,24 @@ body {
   justify-content: space-around;
   font-size: x-large;
   margin: 2%;
+}
+
+.settings-body {
+  display: flex;
+  flex-direction: column;
+  gap: 60%;
+  margin-top: 3%;
+}
+
+.settings-btn,
+.settings-delete-btn {
+  text-align: left;
+  font-size: xx-large;
+  border: none;
+  border-radius: 15px;
+  margin-bottom: 3%;
+}
+
+.settings-delete-btn {
+  color: red;
 }
