@@ -1,5 +1,5 @@
 body {
-  /* overflow: hidden; */
+  overflow: auto;
 }
 
 /* left hand side */
@@ -70,11 +70,16 @@ body {
   margin-top: 0%;
 }
 
+/* card schedule */
+.cs {
+  width: 30%;
+}
+
 /* card */
 .card-container {
   border-radius: 5px;
   border: solid 1px gainsboro;
-  width: 50vh;
+  width: 100%;
   background-color: white;
   max-height: max-content;
 }
@@ -173,8 +178,8 @@ body {
 .chart-container {
   border-radius: 5px;
   border: solid 1px gainsboro;
-  width: 120vh;
-  height: 35vh;
+  width: 120%;
+  height: 40%;
   padding: 1%;
   background-color: white;
 }
@@ -227,12 +232,11 @@ body {
   justify-content: center;
   justify-content: space-between;
   align-items: center;
-  max-height: 100vh;
   background-color: white;
 }
 
 .login-page img {
-  max-width: 100vh;
+  max-width: 49%;
 }
 
 /* login form */
@@ -283,12 +287,11 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-height: 100vh;
   background-color: white;
 }
 
 .signup-page img {
-  max-width: 100vh;
+  max-width: 49%;
 }
 
 .signup {
@@ -304,7 +307,7 @@ body {
   padding: 2%;
   margin: 2%;
   border-radius: 5px;
-  width: 50vh;
+  width: 100%;
 }
 
 .signup button {
@@ -314,7 +317,7 @@ body {
   border-radius: 5px;
   margin: 2%;
   padding: 2%;
-  width: 50vh;
+  width: 100%;
 }
 
 .signup button:hover {
@@ -783,7 +786,7 @@ body {
   color: red;
 }
 
-.profile-container{
+.profile-container {
   border: solid 1px gainsboro;
   border-top: none;
   border-radius: 15px;
@@ -791,21 +794,21 @@ body {
   margin-top: -3%;
 }
 
-.profile-data{
+.profile-data {
   font-size: larger;
   font-weight: bolder;
   text-transform: capitalize;
   padding: 2%;
 }
 
-.profile-data span{
+.profile-data span {
   font-size: larger;
   font-weight: normal;
   text-transform: capitalize;
   padding: 2%;
 }
 
-.error-message{
+.error-message {
   color: red;
   text-align: center;
 }
