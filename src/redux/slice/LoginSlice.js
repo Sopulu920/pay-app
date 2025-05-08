@@ -46,6 +46,12 @@ const loginSlice = createSlice({
                 state.error = action.payload;
                 state.isAuthenticated = false;
             })
+            .addCase('user/logoutUser/fulfilled', (state) => {
+                state.user = null;
+                state.isAuthenticated = false;
+                state.loading = false;
+                state.error = null;
+            })
     },
 });
 

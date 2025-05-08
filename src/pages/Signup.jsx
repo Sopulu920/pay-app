@@ -23,6 +23,7 @@ function Signup() {
             setErrorMessage("passwords do not match");
             return;
         }
+       
         else {
             setErrorMessage("");
         }
@@ -63,6 +64,8 @@ function Signup() {
                     <div className="already">
                         <p>Already have an account? <Link to="/">Log in</Link></p>
                     </div>
+                    {errorMessage && <p className="error-message">{errorMessage}</p>}
+                    {error && <p className="error-message">{error}</p>}
                 </form>
             </div>
 

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 function LeftHand() {
+
     return (
         <div className="left">
             <div className="pay">
