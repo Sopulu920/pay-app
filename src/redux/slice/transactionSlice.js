@@ -10,7 +10,7 @@ export const fetchTransactions = createAsyncThunk(
         try {
             console.log("Fetching transactions for userId:", userId);
             const response = await axios.get(`${VITE_BASE_URL}/transactions`, {
-                params: { userId }
+                params: { user: userId }
             });
             console.log("Transactions fetched:", response.data);
             return response.data;
