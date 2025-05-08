@@ -17,21 +17,24 @@ function Schedule() {
                     <p>Schedule transfer</p>
                     <Link className="recent-view" to={"/allTransaction"}>view all <i className="fa-solid fa-greater-than"></i> </Link>
                 </div>
-                {individuals.map((data, index) => (
-                    <div className="individual" key={index}>
-                        <div className="individual-id">
-                            <img src={Placeholder} alt="" />
+
+                <div className="individual-container">
+                    {individuals.map((data, index) => (
+                        <div className="individual" key={index}>
+                            <div className="individual-id">
+                                <img src={Placeholder} alt="" />
+                                <div>
+                                    <p className="individual-name">{`${data.lastName} ${data.firstName}`}</p>
+                                    <p className="individual-date">{`${date.day}/${date.month}/${date.year}`}</p>
+                                </div>
+                            </div>
                             <div>
-                                <p className="individual-name">{`${data.lastName} ${data.firstName}`}</p>
-                                <p className="individual-date">{`${date.day}/${date.month}/${date.year}`}</p>
+                                <i className="fa fa-naira-sign"></i>
+                                <span>{data.amount}</span>
                             </div>
                         </div>
-                        <div>
-                            <i className="fa fa-naira-sign"></i>
-                            <span>{data.amount}</span>
-                        </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
 
             </div>
         </>
