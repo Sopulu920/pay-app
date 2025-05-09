@@ -12,7 +12,7 @@ function Airtime() {
       <div className="face">
         <LeftHand />
         <div className="body">
-          <Link to="/airtimeData" className="page title">
+          <Link to="/airtimeData" className="airtime-page title">
             <h1><i className="fa-solid fa-arrow-left"></i> Airtime</h1>
           </Link>
           <br />

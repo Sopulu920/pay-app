@@ -12,7 +12,7 @@ function Data() {
       <div className="face">
         <LeftHand />
         <div className="body">
-          <Link to="/airtimeData" className="page title">
+          <Link to="/airtimeData" className="data-page title">
             <h1><i className="fa-solid fa-arrow-left"></i> Data</h1>
           </Link>
           <br />

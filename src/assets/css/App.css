@@ -194,25 +194,22 @@ body {
 /* sim */
 .sim {
   display: flex;
-  align-items: center;
-  flex-direction: column;
+  justify-content: space-between;
 }
 
 .sim-button {
   display: flex;
   justify-content: space-around;
-  width: 75vh;
+  width: 25%;
   border: none;
-  border-radius: 5px;
+  border-radius: 15px;
   margin: 1%;
 }
 
 .sim-button img {
-  width: 25vh;
+  width: 25%;
   border-radius: 50%;
   object-fit: cover;
-  width: 100px;
-  height: 100px;
 }
 
 .sim-button p {
@@ -813,6 +810,31 @@ body {
   text-align: center;
 }
 
+.airtime-data{
+  display: flex;
+  justify-content: space-around;
+}
+
+.airtime-data-page{
+  text-decoration: none;
+  font-size: large;
+  color: black;
+  background-color: gainsboro;
+  padding: 3%;
+  margin-top: 2%;
+  border-radius: 15px;
+}
+
+.airtime-page{
+  color: black;
+  text-decoration: none;
+}
+
+.data-page{
+  color: black;
+  text-decoration: none;
+}
+
 /* laptops and tablet - 1024px and below */
 @media (max-width: 1024px) {
   .signup-page img {
@@ -923,6 +945,10 @@ body {
 
   .transfer-close-btn button{
     display: none;
+  }
+
+  .sim-button p{
+    font-size: small;
   }
 }
 
@@ -1136,5 +1162,9 @@ body {
 
   .modal-container{
     width: 80%;
+  }
+
+  .sim-button p{
+    font-size: x-small;
   }
 }
