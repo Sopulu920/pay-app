@@ -15,12 +15,6 @@ body {
   font-size: large;
 }
 
-.left img {
-  border-radius: 70px;
-  max-width: 18vh;
-  padding: 5%;
-}
-
 .icon {
   width: 100%;
   padding: 3%;
@@ -369,7 +363,7 @@ body {
   border-radius: 5px;
   padding: 4%;
   background-color: white;
-  width: 50vh;
+  width: 50%;
   text-align: center;
   color: black;
   display: flex;
@@ -403,7 +397,7 @@ body {
   border: none;
   border-radius: 5px;
   background-color: rgb(1, 44, 1);
-  width: 50vh;
+  width: 50%;
   text-align: center;
   color: black;
   display: flex;
@@ -501,7 +495,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: end;
-  width: 40%;
+  width: 50%;
 }
 
 .dashboard button {
@@ -839,6 +833,18 @@ body {
     top: 10%;
     left: 30%;
   }
+
+  .table-container {
+    height: 65%;
+  }
+
+  .schedule-container {
+    height: 68%;
+  }
+
+  .dashboard {
+    width: 60%;
+  }
 }
 
 /* tablet - 768px and below */
@@ -851,6 +857,47 @@ body {
     position: absolute;
     top: 10%;
     left: 20%;
+  }
+
+  .dashboard {
+    width: 70%;
+  }
+
+  .user img {
+    width: 20%;
+  }
+
+  .user {
+    font-size: 0.9rem;
+  }
+
+  .accNum {
+    font-size: 1rem;
+  }
+
+  .info-amount {
+    font-size: small;
+  }
+
+  .card-chart {
+    display: block;
+  }
+
+  .ict {
+    width: 82%;
+  }
+
+  .cs {
+    width: 100%;
+  }
+
+  .body {
+    overflow-y: auto;
+    height: 100vh;
+  }
+
+  .card-container{
+    margin-top: 2%;
   }
 }
 
@@ -870,6 +917,84 @@ body {
     position: absolute;
     top: 10%;
     left: 5%;
+  }
+
+  .pay {
+    font-size: large;
+    margin-top: 25%;
+    margin-bottom: 50%;
+  }
+
+  .left {
+    font-size: small;
+    width: 20%;
+  }
+
+  .dashboard {
+    font-size: small;
+    width: 90%;
+  }
+
+  .user {
+    font-size: 0.5rem;
+  }
+
+  .accNum {
+    font-size: 0.5rem;
+    width: 30%;
+  }
+
+  .dashboard button {
+    font-size: 0.5rem;
+  }
+
+  .title h1 {
+    font-size: 0.9rem;
+    margin-top: 2%;
+  }
+
+  .welcome-back {
+    font-size: small;
+  }
+
+  .welcome-receive {
+    font-size: small;
+  }
+
+  .welcome-send {
+    font-size: small;
+  }
+
+  .info {
+    font-size: x-large;
+  }
+
+  .info-text {
+    font-size: 0.5rem;
+  }
+
+  .info-text2 {
+    font-size: 0.7rem;
+  }
+
+  .income {
+    font-size: small;
+  }
+
+  .expense {
+    font-size: small;
+  }
+
+  .fa-wallet {
+    font-size: small;
+  }
+
+  .info-amount {
+    font-size: 0.58rem;
+  }
+
+  .chart-container{
+    height: 30vh;
   }
 }
 
