@@ -765,6 +765,7 @@ body {
   margin: 2%;
 }
 
+/* settings */
 .settings-body {
   display: flex;
   flex-direction: column;
@@ -797,11 +798,11 @@ body {
   font-size: larger;
   font-weight: bolder;
   text-transform: capitalize;
-  padding: 2%;
+  padding: 0.5%;
 }
 
 .profile-data span {
-  font-size: larger;
+  font-size: large;
   font-weight: normal;
   text-transform: capitalize;
   padding: 2%;
@@ -844,6 +845,19 @@ body {
 
   .dashboard {
     width: 60%;
+  }
+
+  .card {
+    height: 25vh;
+  }
+
+  .body {
+    overflow-y: auto;
+    height: 100vh;
+  }
+
+  .close-btn button{
+    top: 19%;
   }
 }
 
@@ -891,17 +905,16 @@ body {
     width: 100%;
   }
 
-  .body {
-    overflow-y: auto;
-    height: 100vh;
-  }
-
   .card-container {
     margin-top: 2%;
   }
 
-  .card {
-    height: 25vh;
+  .modal-container{
+    width: 40%;
+  }
+
+  .close-btn button{
+    top: 25%;
   }
 }
 
@@ -1012,6 +1025,36 @@ body {
   .table-body {
     font-size: 0.5rem;
   }
+
+  .notes {
+    font-size: medium;
+  }
+
+  .transaction {
+    font-size: small;
+  }
+
+  .history-table-head {
+    font-size: small;
+  }
+
+  .history-table-body {
+    font-size: small;
+  }
+
+  .settings-btn,
+  .settings-delete-btn {
+    font-size: x-large;
+  }
+
+  .modal-container{
+    width: 60%;
+  }
+
+  .close-btn button{
+    top: 26%;
+  }
+
 }
 
 /* Small phones - 320px and below */
@@ -1087,4 +1130,13 @@ body {
   .table-body {
     font-size: 0.3rem;
   }
+
+  .modal-container{
+    width: 80%;
+  }
+
+  .close-btn button{
+    top: 30%;
+  }
+
 }

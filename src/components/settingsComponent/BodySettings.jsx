@@ -1,9 +1,8 @@
 import ProfileModal from "./profileModal";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { getUserId } from "../../redux/slice/LoginSlice";
-import { logoutUser } from "../../redux/slice/LogoutSlice";
+import { getUserId, updateUser } from "../../redux/slice/LoginSlice";
 
 function BodySettings() {
 
@@ -12,21 +11,24 @@ function BodySettings() {
         setProfileModal(!profileModal)
     }
 
-    const dispatch = useDispatch();
     const user = useSelector(getUserId);
-    const { loading, error, isAuthenticated } = useSelector((state) => state.logout);
-
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
-    const handleSubmit = async () => {
-        await dispatch(logoutUser(user && user._id));
+    const handleSubmit = () => {
+        // Clear all cookies
+        document.cookie.split(";").forEach(function(c) {
+            document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+        });
+        // Clear localStorage and sessionStorage
+        localStorage.clear();
+        sessionStorage.clear();
+        // Clear Redux login user state
+        dispatch(updateUser(null));
+        // Redirect to login page
+        navigate("/");
+        window.location.reload();
     }
-
-    useEffect(() => {
-        if (isAuthenticated === true) {
-            navigate("/")
-        }
-    }, [isAuthenticated, navigate, dispatch, user])
 
     return (
         <>

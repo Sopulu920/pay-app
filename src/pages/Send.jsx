@@ -21,7 +21,7 @@ function Send() {
 
           <div className="history-table-container">
             <div className="transaction">
-              <h5>all transaction</h5>
+              <h5>send</h5>
             </div>
 
             <table className="history-table">
