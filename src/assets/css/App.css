@@ -896,8 +896,12 @@ body {
     height: 100vh;
   }
 
-  .card-container{
+  .card-container {
     margin-top: 2%;
+  }
+
+  .card {
+    height: 25vh;
   }
 }
 
@@ -993,8 +997,20 @@ body {
     font-size: 0.58rem;
   }
 
-  .chart-container{
+  .chart-container {
     height: 30vh;
+  }
+
+  .recent {
+    font-size: 0.7rem;
+  }
+
+  .table-head {
+    font-size: 0.8rem;
+  }
+
+  .table-body {
+    font-size: 0.5rem;
   }
 }
 
@@ -1010,5 +1026,65 @@ body {
     width: 70%;
     position: absolute;
     left: 15%;
+  }
+
+  .left {
+    font-size: 0.5rem;
+  }
+
+  .welcome-back {
+    font-size: 0.6rem;
+  }
+
+  .welcome-receive {
+    font-size: 0.5rem;
+  }
+
+  .welcome-send {
+    font-size: 0.5rem;
+  }
+
+  .info {
+    font-size: large;
+  }
+
+  .info-text {
+    font-size: 0.2rem;
+  }
+
+  .info-text2 {
+    font-size: 0.4rem;
+  }
+
+  .income {
+    font-size: 0.5rem;
+  }
+
+  .expense {
+    font-size: 0.5rem;
+  }
+
+  .fa-wallet {
+    font-size: 0.5rem;
+  }
+
+  .info-amount {
+    font-size: 0.4rem;
+  }
+
+  .table {
+    width: 100%;
+  }
+
+  .recent {
+    font-size: 0.1rem;
+  }
+
+  .table-head {
+    font-size: 0.4rem;
+  }
+
+  .table-body {
+    font-size: 0.3rem;
   }
 }
