@@ -11,7 +11,6 @@ function AirtimeData() {
         <div className="body">
           <HeaderAirtimeData />
           <BodyAirtimeData />
-          <Footer />
         </div>
       </div>
     </>

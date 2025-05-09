@@ -35,7 +35,7 @@ function Data() {
             </button>
           </div>
         </div>
-        <Footer />
+  
       </div>
     </>
   );

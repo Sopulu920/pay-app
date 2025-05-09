@@ -9,6 +9,7 @@ function Login() {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
 
     const dispatch = useDispatch();
     const { loading, error, isAuthenticated, user } = useSelector((state) => state.login);
@@ -17,6 +18,12 @@ function Login() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        if (!email || !password) {
+            setErrorMessage("All fields are required.");
+            return;
+        }
+
         const credentials = { email, password };
         console.log("Dispatching loginUser with credentials:", credentials);
         dispatch(loginUser(credentials));
@@ -29,6 +36,15 @@ function Login() {
             navigate("/dashboard");
         }
     }, [isAuthenticated, navigate, dispatch, user]);
+
+    // backend error message 
+    const getBackendErrorMessage = () => {
+        if (!error) return null;
+        if (typeof error === "string") return error;
+        if (typeof error === "object" && error.message) return error.message;
+        return "An error occurred during login.";
+    };
+
 
     return (
         <>
@@ -46,6 +62,10 @@ function Login() {
                         <Link>Forget Password?</Link>
                         <Link to="/signup">Sign Up</Link>
                     </div>
+
+                    {errorMessage && <p className="error-message">{errorMessage}</p>}
+                    {error && !errorMessage && <p className="error-message">{getBackendErrorMessage()}</p>}
+
                 </form>
             </div>
         </>

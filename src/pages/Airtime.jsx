@@ -35,7 +35,7 @@ function Airtime() {
             </button>
           </div>
         </div>
-        <Footer />
+
       </div>
     </>
   );
