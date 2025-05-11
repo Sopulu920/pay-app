@@ -1,7 +1,7 @@
 import { getUserId, updateUser } from "../../redux/slice/LoginSlice";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { transfer } from "../../redux/slice/TransferSlice";
+import { transfer, clearError } from "../../redux/slice/TransferSlice";
 
 function TransferModal({ toggleTransferModal }) {
     const dispatch = useDispatch();
@@ -9,6 +9,7 @@ function TransferModal({ toggleTransferModal }) {
     const [amount, setAmount] = useState("");
     const [receiverAccountNumber, setReceiverAccountNumber] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
+    const { loading, error} = useSelector((state) => state.transfer);
 
     const handleTransfer = () => {
         if (!amount || isNaN(amount) || Number(amount) <= 0) {
@@ -32,6 +33,15 @@ function TransferModal({ toggleTransferModal }) {
     const handleInputChange = (setter) => (e) => {
         setter(e.target.value);
         setErrorMessage("");
+        dispatch(clearError());
+    };
+
+     // backend error message 
+    const getBackendErrorMessage = () => {
+        if (!error) return null;
+        if (typeof error === "string") return error;
+        if (typeof error === "object" && error.message) return error.message;
+        return "An error occurred during transfer.";
     };
     return (
         <>
@@ -65,6 +75,7 @@ function TransferModal({ toggleTransferModal }) {
                     <br />
                     <button className="modal-btn" onClick={handleTransfer}>transfer</button>
                     {errorMessage && <p className="error-message">{errorMessage}</p>}
+                    {error && !errorMessage && <p className="error-message">{getBackendErrorMessage()}</p>}
                 </div>
             </div>
         </>

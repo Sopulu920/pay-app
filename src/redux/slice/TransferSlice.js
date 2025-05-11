@@ -28,7 +28,11 @@ const transferSlice = createSlice({
         error: null,
         user: null,
     },
-    reducers: {},
+    reducers: {
+        clearError: (state) => {
+            state.error = null;
+        }
+    },
     extraReducers: (builder) => {
         builder
             .addCase(transfer.pending, (state) => {
@@ -45,5 +49,7 @@ const transferSlice = createSlice({
             })
     },
 });
+
+export const { clearError } = transferSlice.actions;
 
 export default transferSlice.reducer;
