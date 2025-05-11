@@ -6,12 +6,13 @@ import { withdraw } from "../../redux/slice/Withdrawal";
 function WithdrawalModal({ toggleWithdrawalModal }) {
 
     const [amount, setAmount] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
     const dispatch = useDispatch();
     const user = useSelector(getUserId);
 
     const handleWithdrawal = () => {
             if (!amount || isNaN(amount) || Number(amount) <= 0) {
-                alert("Please enter a valid withdrawal amount.");
+                setErrorMessage("Please enter a valid withdrawal amount.");
                 return;
             }
     
@@ -22,7 +23,12 @@ function WithdrawalModal({ toggleWithdrawalModal }) {
                     toggleWithdrawalModal();
                 }
             });
-        };   
+        }; 
+        
+        const handleInputChange=(setter)=>(e)=>{
+            setter(e.target.value);
+            setErrorMessage("");
+        };
 
 
     return (
@@ -43,12 +49,13 @@ function WithdrawalModal({ toggleWithdrawalModal }) {
                                 min="0"
                                 step="0.01"
                                 value={amount}
-                                onChange={(e) => setAmount(e.target.value)}
+                                onChange={handleInputChange(setAmount)}
                             />
                         </div>
                     </div>
                     <br />
                     <button className="modal-btn" onClick={handleWithdrawal}>withdrawal</button>
+                    {errorMessage && <p className="error-message">{errorMessage}</p>}
                 </div>
             </div>
         </>

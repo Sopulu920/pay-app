@@ -8,14 +8,15 @@ function TransferModal({ toggleTransferModal }) {
     const user = useSelector(getUserId);
     const [amount, setAmount] = useState("");
     const [receiverAccountNumber, setReceiverAccountNumber] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
 
     const handleTransfer = () => {
         if (!amount || isNaN(amount) || Number(amount) <= 0) {
-            alert("Please enter a valid transfer amount.");
+           setErrorMessage("Please enter a valid transfer amount.");
             return;
         }
-        if (!user || !user._id) {
-            alert("User not found. Please log in.");
+        if (!receiverAccountNumber || isNaN(receiverAccountNumber)) {
+            setErrorMessage("Enter Account number");
             return;
         }
         dispatch(transfer({ senderId: user._id, receiverAccountNumber, amount: Number(amount) })).then((action) => {
@@ -26,6 +27,12 @@ function TransferModal({ toggleTransferModal }) {
             }
         });
     }
+
+    // Clear error messages on input change
+    const handleInputChange = (setter) => (e) => {
+        setter(e.target.value);
+        setErrorMessage("");
+    };
     return (
         <>
             <div className="modal-bg" onClick={toggleTransferModal}>
@@ -40,7 +47,7 @@ function TransferModal({ toggleTransferModal }) {
                             placeholder="account number"
                             min="0"
                             value={receiverAccountNumber}
-                            onChange={(e) => setReceiverAccountNumber(e.target.value)}
+                            onChange={handleInputChange(setReceiverAccountNumber)}
                         />
                         <br />
                         <div>
@@ -51,12 +58,13 @@ function TransferModal({ toggleTransferModal }) {
                                 min="0"
                                 step="0.01"
                                 value={amount}
-                                onChange={(e) => setAmount(e.target.value)}
+                                onChange={handleInputChange(setAmount)}
                             />
                         </div>
                     </div>
                     <br />
                     <button className="modal-btn" onClick={handleTransfer}>transfer</button>
+                    {errorMessage && <p className="error-message">{errorMessage}</p>}
                 </div>
             </div>
         </>

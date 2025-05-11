@@ -6,12 +6,13 @@ import { getUserId, updateUser } from "../../redux/slice/LoginSlice";
 function DepositModal({ toggleDepositModal }) {
 
     const [amount, setAmount] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
     const dispatch = useDispatch();
     const user = useSelector(getUserId);
-
+    
     const handleDeposit = () => {
         if (!amount || isNaN(amount) || Number(amount) <= 0) {
-            alert("Please enter a valid deposit amount.");
+            setErrorMessage("Please enter a valid deposit amount.");
             return;
         }
 
@@ -23,6 +24,13 @@ function DepositModal({ toggleDepositModal }) {
             }
         });
     };
+
+    // Clear error messages on input change
+    const handleInputChange = (setter) => (e) => {
+        setter(e.target.value);
+        setErrorMessage("");
+    };
+
 
     return (
         <>
@@ -42,13 +50,14 @@ function DepositModal({ toggleDepositModal }) {
                                 min="0"
                                 step="0.01"
                                 value={amount}
-                                onChange={(e) => setAmount(e.target.value)}
+                                onChange={handleInputChange(setAmount)}
                             />
                         </div>
 
                     </div>
                     <br />
                     <button className="modal-btn" onClick={handleDeposit}>deposit</button>
+                    {errorMessage && <p className="error-message">{errorMessage}</p>}
                 </div>
             </div>
         </>

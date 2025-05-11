@@ -1,7 +1,6 @@
-import React from "react";
 import { useSelector } from "react-redux";
 import { getUserId } from "../../redux/slice/LoginSlice";
-import { data } from "react-router-dom";
+
 
 function ProfileModal({ toggleProfileModal }) {
     const user = useSelector(getUserId);
