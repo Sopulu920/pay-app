@@ -676,8 +676,8 @@ body {
   border: none;
   background-color: red;
   width: 5%;
-  position: fixed;
-  top: 26%;
+  position: absolute;
+  top: 26.5%;
 }
 
 .transfer-close-btn {
@@ -690,7 +690,7 @@ body {
   border: none;
   background-color: red;
   width: 5%;
-  position: fixed;
+  position: absolute;
   top: 25.5%;
 }
 
@@ -837,6 +837,26 @@ body {
   text-decoration: none;
 }
 
+/* receiver info */
+.r-data-title{
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: large;
+}
+
+.r-close-btn {
+  text-align: right;
+}
+
+.r-close-btn button {
+  border-radius: 5px;
+  padding: 1%;
+  border: none;
+  background-color: red;
+  width: 5%;
+  position: absolute;
+  top: 30.5%;
+}
 /* laptops and tablet - 1024px and below */
 @media (max-width: 1024px) {
   .signup-page img {
@@ -881,11 +901,15 @@ body {
   }
 
   .close-btn button{
-    top: 19%;
+    top: 24.9%;
   }
 
   .transfer-close-btn button{
-    top: 20%;
+    top: 25%;
+  }
+
+  .r-close-btn button{
+    top: 33%;
   }
 }
 
@@ -946,6 +970,10 @@ body {
   }
 
   .transfer-close-btn button{
+    display: none;
+  }
+
+  .r-close-btn{
     display: none;
   }
 

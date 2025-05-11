@@ -5,6 +5,7 @@ import { getUserId } from "../../redux/slice/LoginSlice";
 import WithdrawalModal from "./WithdrawalModal";
 import TransferModal from "./TransferModal";
 import DepositModal from "./DepositModal";
+import { useNavigate } from "react-router-dom";
 
 function cardNumber() {
     return Array.from({ length: 16 }, () => Math.floor(Math.random() * 10)).join(""); //generate random numbers for card number
@@ -12,7 +13,10 @@ function cardNumber() {
 const number = cardNumber(); //to call random number for card
 
 function Card() {
-    
+    const navigate = useNavigate();
+    const history = () => {
+        navigate("/allTransaction");
+    }
 
     const [withdrawalModal, setWithdrawalModal] = useState(false); //to track state
     const [transferModal, setTransferModal] = useState(false); //to track state
@@ -73,7 +77,7 @@ function Card() {
 
                 </div>
                 <div className="view-button">
-                    <button>view card history</button>
+                    <button onClick={history}>view card history</button>
                 </div>
             </div>
             {withdrawalModal && <WithdrawalModal toggleWithdrawalModal={toggleWithdrawalModal} />}
