@@ -857,6 +857,10 @@ body {
   position: absolute;
   top: 30.5%;
 }
+
+.input-error{
+  border: solid 1px red;
+}
 /* laptops and tablet - 1024px and below */
 @media (max-width: 1024px) {
   .signup-page img {

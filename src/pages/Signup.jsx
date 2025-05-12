@@ -12,6 +12,14 @@ function Signup() {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
+    const [empty, setEmpty] = useState({
+        firstName: false,
+        lastName: false,
+        email: false,
+        phone: false,
+        password: false,
+        confirmPassword: false,
+    });
 
     const dispatch = useDispatch();
     const { loading, error, success } = useSelector((state) => state.user);
@@ -19,16 +27,27 @@ function Signup() {
     const navigate = useNavigate();
 
     // Clear error messages on input change
-    const handleInputChange = (setter) => (e) => {
+    const handleInputChange = (setter, field) => (e) => {
         setter(e.target.value);
         setErrorMessage("");
+        setEmpty((prev) => ({ ...prev, [field]: false }));
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // check empty fields
-        if (!firstName || !lastName || !email || !phone || !password || !confirmPassword) {
+        // check empty fields and accordingly
+        const newEmpty = {
+            firstName: !firstName,
+            lastName: !lastName,
+            email: !email,
+            phone: !phone,
+            password: !password,
+            confirmPassword: !confirmPassword,
+        };
+        setEmpty(newEmpty);
+
+        if (Object.values(newEmpty).some((v) => v)) {
             setErrorMessage("All fields are required.");
             return;
         }
@@ -39,7 +58,7 @@ function Signup() {
         }
 
         setErrorMessage("");
-        
+
         const userData = { firstName, lastName, phone, email, password };
         dispatch(signupUser(userData));
     };
@@ -64,17 +83,52 @@ function Signup() {
                 <img src={bank} alt="" />
                 <form className="signup" onSubmit={handleSubmit}>
                     <h4>Register a new account with us</h4>
-                    <input name="firstName" className="" type="text" placeholder="first name" onChange={handleInputChange(setFirstName)} value={firstName} />
+                    <input
+                    name="firstName"
+                    className={empty.firstName ? "input-error" : ""}
+                    type="text"
+                    placeholder="first name"
+                    onChange={handleInputChange(setFirstName, "firstName")}
+                    value={firstName} />
                     <br />
-                    <input name="lastName" className="" type="text" placeholder="last name" onChange={handleInputChange(setLastName)} value={lastName} />
+                    <input
+                    name="lastName"
+                    className={empty.lastName ? "input-error" : ""}
+                    type="text"
+                    placeholder="last name"
+                    onChange={handleInputChange(setLastName, "lastName")}
+                    value={lastName} />
                     <br />
-                    <input name="phone" className="" type="tel" placeholder="phone no" onChange={handleInputChange(setPhone)} value={phone} />
+                    <input
+                    name="phone"
+                    className={empty.phone ? "input-error" : ""}
+                    type="tel"
+                    placeholder="phone no"
+                    onChange={handleInputChange(setPhone, "phone")}
+                    value={phone} />
                     <br />
-                    <input name="email" className="" type="text" placeholder="Email" onChange={handleInputChange(setEmail)} value={email} />
+                    <input name="email"
+                    className={empty.email ? "input-error" : ""}
+                    type="text"
+                    placeholder="Email"
+                    onChange={handleInputChange(setEmail, "email")}
+                    value={email} />
                     <br />
-                    <input name="password" className="" type="password" placeholder="new password" onChange={handleInputChange(setPassword)} value={password} />
+                    <input
+                    name="password"
+                    className={empty.password ? "input-error" : ""}
+                    type="password"
+                    placeholder="new password"
+                    onChange={handleInputChange(setPassword, "password")}
+                    value={password} />
                     <br />
-                    <input name="confirmPassword" className="" type="password" placeholder="confirm password" onChange={handleInputChange(setConfirmPassword)} value={confirmPassword} />
+                    <input
+                    name="confirmPassword"
+                    className={empty.confirmPassword ? "input-error" : ""}
+                    type="password"
+                    placeholder="confirm password"
+                    onChange={handleInputChange(setConfirmPassword, "confirmPassword")}
+                    value={confirmPassword} />
                     <br />
                     <button className="" type="submit" disabled={loading}>
                         {loading ? "Signing Up..." : "Sign Up"}

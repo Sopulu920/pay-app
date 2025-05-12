@@ -10,6 +10,10 @@ function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
+    const [empty, setEmpty] = useState({
+        email: false,
+        password: false,
+    });
 
     const dispatch = useDispatch();
     const { loading, error, isAuthenticated, user } = useSelector((state) => state.login);
@@ -19,7 +23,13 @@ function Login() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (!email || !password) {
+        const newEmpty = {
+            email: !email,
+            password: !password,
+        };
+        setEmpty(newEmpty);
+
+        if (Object.values(newEmpty).some((v) => v)) {
             setErrorMessage("All fields are required.");
             return;
         }
@@ -27,6 +37,13 @@ function Login() {
         const credentials = { email, password };
         console.log("Dispatching loginUser with credentials:", credentials);
         dispatch(loginUser(credentials));
+    };
+
+    // Clear error messages on input change
+    const handleInputChange = (setter, field) => (e) => {
+        setter(e.target.value);
+        setErrorMessage("");
+        setEmpty((prev) => ({ ...prev, [field]: false }));
     };
 
     useEffect(() => {
@@ -52,9 +69,19 @@ function Login() {
                 <img src={bank} alt="" />
                 <form className="login" onSubmit={handleSubmit}>
                     <h4>Welcome to our Log in page</h4>
-                    <input name="email" className="" type="text" placeholder="E-mail" onChange={(e) => setEmail(e.target.value)} />
+                    <input
+                    name="email"
+                    className={empty.email ? "input-error" : ""}
+                    type="text"
+                    placeholder="E-mail"
+                    onChange={handleInputChange(setEmail, "email")} />
                     <br />
-                    <input name="password" className="" type="password" placeholder="password" onChange={(e) => setPassword(e.target.value)} />
+                    <input
+                    name="password"
+                    className={empty.password ? "input-error" : ""}
+                    type="password"
+                    placeholder="password"
+                    onChange={handleInputChange(setPassword, "password")} />
                     <br />
                     <button className="" type="submit">Log in</button>
                     <br />
